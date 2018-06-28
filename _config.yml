@@ -70,7 +70,7 @@ safe: false;
 
 # Markdown
 markdown: kramdown
-highlighter: none
+highlighter: prism
 kramdown:
   input: GFM
 

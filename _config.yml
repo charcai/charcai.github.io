@@ -37,7 +37,7 @@ comments:
   gitalk_repo: 'charcai.github.io'
   gitalk_owner: 'charcai'
   gitalk_admin: 'charcai'
-  distractionFreeMode: true
+  distractionFreeMode: false
 
 # MathJax 公式支持 by Ray-Eldath
 mathjax: false

@@ -65,12 +65,12 @@ recommend-condition-size: 12 # a tag will be recommended if the size of it is mo
 # Build settings
 paginate: 7
 paginate_path: 'p:num'
-exclude: ['node_modules', 'dev', 'package.json', 'gulpfile.js', '.gitignore', 'README.md', 'update', 'urls.txt', 'baidu']
+exclude: ['node_modules', 'dev', 'package.json', 'gulpfile.js', '.gitignore', 'README.md', 'update']
 #safe: false;
 
 # Markdown
 markdown: kramdown
-highlighter: rouge
+highlighter: none
 kramdown:
   input: GFM
 

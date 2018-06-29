@@ -5,12 +5,13 @@ categories: STL C++
 tags: STL C++
 ---
 # 介绍
-priority_queue, 又称优先队列，是C++的STL库的重要组成部分之一。  
+priority_queue, 又称优先队列，是C++ STL库的重要组成部分之一。  
 priority_queue的定义在头文件`<queue>`中，因此需要:
 ```cpp
 #include <queue>
 ```
 它允许用户为队列中元素设置优先级，放置元素的时候不是直接放到队尾，而是放置到比它优先级低的元素前面，标准库默认使用 < 操作符来确定优先级关系。
+
 它的原型是
 ```cpp
 template <class T, class Container = vector<T>,
@@ -104,6 +105,7 @@ priority_queue<int, vector<int>, greater<int> >pq;
 ```
 
 注：最后两个`>`号千万不要写在一起，否则有可能被编译器误认为是`>>`运算符！
+
 如果以这行代码替换上面程序1里的定义的话，运行结果就会是这样：
 ```bash
 5
@@ -124,8 +126,7 @@ struct node
 priority_queue<node, vector<node>, greater<node> > q;
 //三个node也要一样！
 ```
-替换程序2相关内容，
-输出：
+替换程序2相关内容，输出：
 ```bash
 3
 3 5 10

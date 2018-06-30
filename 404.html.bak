@@ -11,7 +11,6 @@ description: "Sorry, Page Not Found :("
         <h1>404</h1>
         <span class="subheading">{{ page.description }}</span>
         <a href="{{ site.nav.home }}" class="btn">Back to home</a>
-        <iframe scrolling='no' frameborder='0' src='http://yibo.iyiyun.com/Home/Distribute/ad404/key/1340687' width='654' height='470' style='display:block;'></iframe>
     </div>
 </header>
 

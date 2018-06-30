@@ -1,8 +1,7 @@
 ---
 layout: post
 title: C++ STL之priority_queue优先队列
-categories: STL C++
-tags: STL C++
+tags: STL C++ 队列
 ---
 # 介绍
 priority_queue, 又称优先队列，是C++ STL库的重要组成部分之一。  

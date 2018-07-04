@@ -11,6 +11,7 @@ nav:
   home: '/'
   tags: '/tags.html'
   about: '/about.html'
+  OJ: '//hloj.tk'
 
 # Footer
 footer:

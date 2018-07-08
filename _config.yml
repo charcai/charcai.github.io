@@ -33,8 +33,8 @@ nightMode: true
 # Comments 评论功能
 comments:
   gitalk: true
-  gitalk_clientID: 'adde14f4d14b022d402e'
-  gitalk_Secret: 'f388c5b728650738d3c263f6d8c37e1b86b1ff7b'
+  gitalk_clientID: '8cf45a9f76f4435ab295'
+  gitalk_Secret: '01c31575df26540d62fe390a6453b37feb6991cb'
   gitalk_repo: 'charcai.github.io'
   gitalk_owner: 'charcai'
   gitalk_admin: 'charcai'

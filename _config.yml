@@ -34,7 +34,7 @@ nightMode: true
 comments:
   gitalk: true
   gitalk_clientID: 'adde14f4d14b022d402e'
-  gitalk_Secret: 'adbaa4ccf6e8a0e46c522025680e9d84eadb820a'
+  gitalk_Secret: 'f388c5b728650738d3c263f6d8c37e1b86b1ff7b'
   gitalk_repo: 'charcai.github.io'
   gitalk_owner: 'charcai'
   gitalk_admin: 'charcai'

@@ -1,7 +1,7 @@
 # Site settings 配置站点
 title: 蔡彦恒's Blog
 description: '一个"不务正业"的OIer'
-keyword: 蔡彦恒, 蔡彦恒's Blog, C++, STL
+keyword: 蔡彦恒, 蔡彦恒的博客, C++
 url: 'https://charcai.tk' # your host
 # if you don't need baseurl, you should leave this value blank.
 baseurl: ''
@@ -38,6 +38,7 @@ comments:
   gitalk_repo: 'charcai.github.io'
   gitalk_owner: 'charcai'
   gitalk_admin: 'charcai'
+  pagerDirection: 'first'
 # distractionFreeMode: false
 
 # MathJax 公式支持 by Ray-Eldath

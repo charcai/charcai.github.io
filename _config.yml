@@ -27,7 +27,7 @@ avatar: 'https://s1.ax1x.com/2018/06/28/PiGO9x.png'
 search: true
 
 # Night mode
-nightMode: true
+nightMode: false
 
 # Comments 评论功能
 comments:

@@ -1,7 +1,7 @@
 # Site settings 配置站点
-title: CharCai, CharCai's Blog
+title: CharCai's Blog
 description: '只是个蒟蒻'
-keyword: 蔡彦恒, 蔡彦恒的博客, C++
+keyword: CharCai, CharCai的博客, C++
 url: 'https://charcai.tk' # your host
 # if you don't need baseurl, you should leave this value blank.
 baseurl: ''
@@ -11,7 +11,6 @@ nav:
   home: '/'
   tags: '/tags.html'
   about: '/about.html'
-#  spare: '//blog.charcai.tk'
 
 # Footer
 footer:

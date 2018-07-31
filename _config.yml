@@ -1,6 +1,6 @@
 # Site settings 配置站点
-title: 蔡彦恒's Blog
-description: '只是个OI蒟蒻'
+title: CharCai, CharCai's Blog
+description: '只是个蒟蒻'
 keyword: 蔡彦恒, 蔡彦恒的博客, C++
 url: 'https://charcai.tk' # your host
 # if you don't need baseurl, you should leave this value blank.
@@ -18,11 +18,11 @@ footer:
   since: 2018
 
 # Author 配置博主信息
-author: '蔡彦恒'
+author: 'CharCai'
 nickname: 'CharCai'
 bio: '专注 OI && ACM'
 
-avatar: 'https://s1.ax1x.com/2018/06/28/PiGO9x.png'
+avatar: 'https://s1.ax1x.com/2018/07/31/PwZIQ1.jpg'
 
 # Search
 search: true

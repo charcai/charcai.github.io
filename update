@@ -1,5 +1,5 @@
 #!/bin/sh
-jekyll build
+#jekyll build
 git add --all
 git commit -m "Update Files"
 git push

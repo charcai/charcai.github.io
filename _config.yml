@@ -10,6 +10,7 @@ baseurl: ''
 nav:
   home: '/'
   tags: '/tags.html'
+  rss: "/rss.xml"
   about: '/about.html'
 
 # Footer

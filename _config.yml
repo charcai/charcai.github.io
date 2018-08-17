@@ -1,8 +1,8 @@
 # Site settings 配置站点
 title: CharCai's Blog
-description: '只是个蒟蒻'
+description: 'Work Harder, Hard Worker.'
 keyword: CharCai, CharCai的博客, C++
-url: 'https://charcai.tk' # your host
+url: 'https://charcai.github.io' # your host
 # if you don't need baseurl, you should leave this value blank.
 baseurl: ''
 
@@ -35,7 +35,7 @@ comments:
   gitalk: true
   gitalk_clientID: '8cf45a9f76f4435ab295'
   gitalk_Secret: '01c31575df26540d62fe390a6453b37feb6991cb'
-  gitalk_repo: 'charcai.github.io'
+  gitalk_repo: 'BlogComment'
   gitalk_owner: 'charcai'
   gitalk_admin: 'charcai'
   pagerDirection: 'first'

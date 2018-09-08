@@ -46,7 +46,7 @@ mathjax: false
 
 # Share
 social-share: true
-social-share-items: ['qq', 'wechat', 'qzone', 'weibo', 'douban']
+social-share-items: ['qq', 'wechat', 'qzone', 'weibo', 'douban', 'facebook']
 
 # theme color 主题皮肤
 theme-color: 'default'  # pink or default

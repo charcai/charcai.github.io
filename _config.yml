@@ -37,7 +37,7 @@ comments:
   gitalk_Secret: '3f9b6c296723c9631af887b9651eff5699eea9a2'
   gitalk_repo: 'Blog'
   gitalk_owner: '1481767320'
-  gitalk_admin: 'charcai'
+  gitalk_admin: ['charcai', '1481767320']
   pagerDirection: 'first'
 # distractionFreeMode: false
 

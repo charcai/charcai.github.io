@@ -33,10 +33,10 @@ nightMode: false
 # Comments 评论功能
 comments:
   gitalk: true
-  gitalk_clientID: '8cf45a9f76f4435ab295'
-  gitalk_Secret: '01c31575df26540d62fe390a6453b37feb6991cb'
-  gitalk_repo: 'BlogComment'
-  gitalk_owner: 'charcai'
+  gitalk_clientID: '424ff8e90c566fb9f21f'
+  gitalk_Secret: '3f9b6c296723c9631af887b9651eff5699eea9a2'
+  gitalk_repo: 'Blog'
+  gitalk_owner: '1481767320'
   gitalk_admin: 'charcai'
   pagerDirection: 'first'
 # distractionFreeMode: false

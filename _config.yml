@@ -1,7 +1,7 @@
-# Site settings ÅäÖÃÕ¾µã
+ï»¿# Site settings
 title: CharCai's Blog
 description: 'Work Harder, Hard Worker.'
-keyword: CharCai, CharCaiµÄ²©¿Í, C++
+keyword: CharCai, CharCaiçš„åšå®¢
 url: 'https://charcai.github.io' # your host
 # if you don't need baseurl, you should leave this value blank.
 baseurl: ''
@@ -17,10 +17,10 @@ nav:
 footer:
   since: 2018
 
-# Author ÅäÖÃ²©Ö÷ĞÅÏ¢
+# Author
 author: 'CharCai'
 nickname: 'CharCai'
-bio: '×¨×¢ OI && EDM'
+bio: 'ä¸“æ³¨OI && EDM'
 
 avatar: 'https://s1.ax1x.com/2018/08/23/PTookV.jpg'
 
@@ -30,7 +30,7 @@ search: true
 # Night mode
 nightMode: false
 
-# Comments ÆÀÂÛ¹¦ÄÜ
+# Comments
 comments:
   gitalk: false
   gitalk_clientID: '424ff8e90c566fb9f21f'
@@ -41,26 +41,26 @@ comments:
   pagerDirection: 'first'
 # distractionFreeMode: false
 
-# MathJax ¹«Ê½Ö§³Ö by Ray-Eldath
+# MathJax by Ray-Eldath
 mathjax: false
 
 # Share
 social-share: true
 social-share-items: ['qq', 'wechat', 'qzone', 'weibo', 'douban', 'facebook']
 
-# theme color Ö÷ÌâÆ¤·ô
+# theme color 
 theme-color: 'default'  # pink or default
 
 # Post header background patterns (when the post no cover): circuitBoard, overlappingCircles, food, glamorous, ticTacToe, seaOfClouds
 postPatterns: 'circuitBoard'
 
-# SNS settings ÅäÖÃÉç½»ÍøÕ¾
+# SNS settings 
 # url: email, weibo, zhihu, twitter, instagram, juejin, github, douban, facebook, dribble, uicn, jianshu, medium, linkedin
 sns:
   juejin: '//juejin.im/user/5b335c16f265da59780b926e'
   github: '//github.com/charcai'
   email: 'mailto:char_cai@outlook.com'
-# Tags ÉèÖÃ±êÇ©
+# Tags
 recommend-tags: true # whether or not display recommend-tags on the sidebar
 recommend-condition-size: 12 # a tag will be recommended if the size of it is more than this value
 

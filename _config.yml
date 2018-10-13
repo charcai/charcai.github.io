@@ -9,7 +9,7 @@ baseurl: ''
 # Navigation links
 nav:
   home: '/'
-  tags: '/tags.html'
+  link: '/link.html'
   about: '/about.html'
 
 # Footer

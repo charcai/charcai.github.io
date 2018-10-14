@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet" href="/assets/css/video.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
 {% include post-head.html %}
 
 <body>
@@ -16,7 +14,7 @@
       <div class="post-tags">
         {% if page.tags.size > 0 %}
           {% for tag in page.tags  %}
-            <a href="{{ "tags#" | append: tag | absolute_url }}" class="post-tag">{{ tag }}</a>
+            <a href="{{ "/tags#" | append: tag | absolute_url }}" class="post-tag">{{ tag }}</a>
           {% endfor %}
         {% endif %}
       </div>

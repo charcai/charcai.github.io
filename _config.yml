@@ -25,7 +25,7 @@ avatar: 'https://charcai.github.io/apple-touch-icon.png'
 # 'https://s1.ax1x.com/2018/08/23/PTookV.jpg'
 
 # Amazing Counters
-counter: false
+counter: true
 
 # Search
 search: true
@@ -84,7 +84,7 @@ RSS: true
 
 # Permalink
 # See: https://github.com/kaeyleo/jekyll-theme-H2O/issues/35
-permalink: /:year/:month/:date/:title.html
+permalink: /archives/:year/:title.html
 
 # Plugins
 plugins: [jekyll-paginate, jekyll-sitemap]

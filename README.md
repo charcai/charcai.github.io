@@ -1,2 +1,2 @@
-# 蔡彦恒's Blog
-[Demo](https://charcai.tk)
+# CharacteX's Blog
+[Demo](https://charcai.github.io/)

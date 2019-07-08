@@ -1,17 +1,0 @@
-Will not apply HSTS. The HSTS database must be a regular and non-world-writable file.
-ERROR: could not open HSTS store at '/home/charcai/.wget-hsts'. HSTS will be disabled.
---2019-07-08 21:05:00--  http://zhanzhang.so.com/?m=Site
-Resolving zhanzhang.so.com (zhanzhang.so.com)... 171.8.167.20
-Connecting to zhanzhang.so.com (zhanzhang.so.com)|171.8.167.20|:80... connected.
-HTTP request sent, awaiting response... 302 Moved Temporarily
-Location: / [following]
---2019-07-08 21:05:00--  http://zhanzhang.so.com/
-Connecting to zhanzhang.so.com (zhanzhang.so.com)|171.8.167.20|:80... connected.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘index.html?m=Site’
-
-index.html?m=Site                 [<=>                                               ]       0  --.-KB/s               index.html?m=Site                 [ <=>                                              ]  18.45K  --.-KB/s    in 0.03s   
-
-2019-07-08 21:05:00 (580 KB/s) - ‘index.html?m=Site’ saved [18897]
-

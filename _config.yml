@@ -4,7 +4,7 @@ description: 'Work Harder, Hard Worker.'
 keyword: Charactex, Charactex的博客, Charactex独立博客
 url: 'https://ch1024.xyz' # your host
 # if you don't need baseurl, you should leave this value blank.
-baseurl: ''
+baseurl: '/blog'
 
 # Navigation links
 nav:

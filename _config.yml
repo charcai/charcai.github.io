@@ -1,6 +1,6 @@
 ﻿# Site settings
 title: Charactex's Blog
-description: 'Work Harder, Hard Worker.'
+description: ''
 keyword: Charactex, Charactex的博客, Charactex独立博客
 url: 'https://ch1024.xyz' # your host
 # if you don't need baseurl, you should leave this value blank.
@@ -19,7 +19,7 @@ footer:
 # Author
 author: 'CharCai'
 nickname: 'CharCai'
-bio: '专注OI && EDM'
+bio: 'Bend The Rules.'
 
 avatar: '//www.z4a.net/images/2018/12/23/Char1024.png'
 # 'https://s1.ax1x.com/2018/08/23/PTookV.jpg'

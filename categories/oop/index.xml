@@ -1,4 +1,176 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>OOP on Charactex's Blog</title><link>https://charactex.com/categories/oop/</link><description>Recent content in OOP on Charactex's Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Tue, 05 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://charactex.com/categories/oop/index.xml" rel="self" type="application/rss+xml"/><item><title>北航软工: 面向对象程序设计 Lab01</title><link>https://charactex.com/post/2024/11/oop-lab01/</link><pubDate>Tue, 05 Nov 2024 00:00:00 +0000</pubDate><guid>https://charactex.com/post/2024/11/oop-lab01/</guid><description>&lt;blockquote>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>OOP on Charactex's Blog</title><link>https://charactex.com/categories/oop/</link><description>Recent content in OOP on Charactex's Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 06 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://charactex.com/categories/oop/index.xml" rel="self" type="application/rss+xml"/><item><title>北航软工: 面向对象程序设计 Lab02</title><link>https://charactex.com/post/2024/11/oop-lab02/</link><pubDate>Wed, 06 Nov 2024 00:00:00 +0000</pubDate><guid>https://charactex.com/post/2024/11/oop-lab02/</guid><description>&lt;h1 id="lab-02-assignment">Lab 02 Assignment
+&lt;/h1>&lt;blockquote>
+&lt;p>题面与所有提及的文件均保存在作者的GitHub中，&lt;a class="link" href="https://github.com/charcai/BUAA-OOP-2024/tree/main/Lab02" target="_blank" rel="noopener"
+>点击这里&lt;/a>查看。&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="question-01">Question 01
+&lt;/h2>&lt;h4 id="1-注释标记的哪些行会导致编译错误将错误截图并说明原因">1. 注释标记的哪些行会导致编译错误？&lt;strong>将错误截图，并说明原因&lt;/strong>。
+&lt;/h4>&lt;p>第 4 行会编译错误。&lt;/p>
+&lt;p>&lt;img src="https://charactex.com/Q01.png"
+loading="lazy"
+alt="error"
+>&lt;/p>
+&lt;p>在方法中声明的变量需手动设置初始值后方可正常调用，此处 &lt;code>m&lt;/code> 没有赋初始值。&lt;/p>
+&lt;h4 id="2-区分变量-x-和-m-回答谁需要初始化才能使用为什么">2. 区分变量 &lt;code>x&lt;/code> 和 &lt;code>m&lt;/code> ，&lt;strong>回答谁需要初始化才能使用，为什么&lt;/strong>
+&lt;/h4>&lt;ul>
+&lt;li>
+&lt;p>&lt;code>m&lt;/code>需要初始化才能使用，因为它是声明在方法中的局部变量。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>x&lt;/code>不需初始化即可使用，因为它是声明在类中的全局变量。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="question-02">Question 02
+&lt;/h2>&lt;h4 id="a-overloadint-m-与-overloaddouble-m-互为重载的构造方法">a. &lt;code>Overload(int m)&lt;/code> 与 &lt;code>Overload(double m)&lt;/code> 互为重载的构造方法。
+&lt;/h4>&lt;p>&lt;strong>正确。&lt;/strong>&lt;/p>
+&lt;h4 id="b-int-overloadint-m-与-void-overloaddouble-m-互为重载的非构造方法">b. &lt;code>int Overload(int m)&lt;/code> 与 &lt;code>void Overload(double m)&lt;/code> 互为重载的非构造方法。
+&lt;/h4>&lt;p>&lt;strong>正确。&lt;/strong>&lt;/p>
+&lt;h4 id="c-overload-类有-2-个构造方法尝试调用默认构造方法-overload-会无法通过编译">c. &lt;code>Overload&lt;/code> 类有 2 个构造方法，尝试调用默认构造方法 &lt;code>Overload()&lt;/code> 会无法通过编译。
+&lt;/h4>&lt;p>&lt;strong>正确。&lt;/strong>&lt;/p>
+&lt;h4 id="d-overload-类有-3-个构造方法">d. &lt;code>Overload&lt;/code> 类有 3 个构造方法。
+&lt;/h4>&lt;p>&lt;strong>错误&lt;/strong>。构造方法无返回值类型，只有前两个方法是合法的构造方法。&lt;/p>
+&lt;h2 id="question-03">Question 03
+&lt;/h2>&lt;p>输出：&lt;/p>
+&lt;pre tabindex="0">&lt;code>initialize A1
+initialize A2
+initialize A3
+initialize A4
+initialize A5
+initialize A6
+copy from A6
+initialize B1
+initialize A8
+main begins
+initialize A9
+initialize A6
+copy from A6
+initialize B2
+initialize A8
+main ends
+&lt;/code>&lt;/pre>&lt;h2 id="question-04">Question 04
+&lt;/h2>&lt;h4 id="1-这段代码能够证明在属性定义处初始化的属性比在方法中初始化的属性先被初始化吗">1. 这段代码能够证明“在属性定义处初始化的属性，比在方法中初始化的属性先被初始化”吗？
+&lt;/h4>&lt;p>&lt;strong>能。&lt;/strong> &lt;code>a7&lt;/code>在属性定义处初始化，&lt;code>a8&lt;/code>在方法中初始化，尽管&lt;code>a7&lt;/code>出现于&lt;code>a8&lt;/code>之后，依然被先初始化。&lt;/p>
+&lt;h4 id="2-这段代码能够证明在属性定义处初始化的属性初始化顺序等同于他们在类定义">2. 这段代码能够证明“在属性定义处初始化的属性，初始化顺序等同于他们在类定义
+&lt;/h4>&lt;p>中出现的顺序”吗？&lt;/p>
+&lt;p>&lt;strong>能。&lt;/strong> &lt;code>a6&lt;/code>、&lt;code>a7&lt;/code>两个非静态属性先后出现，二者也是按照出现顺序先后被初始化。&lt;/p>
+&lt;h2 id="question-05">Question 05
+&lt;/h2>&lt;p>静态属性的初始化顺序均与出现顺序相同，无论是静态变量还是静态初始化块。&lt;/p>
+&lt;ol>
+&lt;li>&lt;strong>静态变量&lt;/strong> 静态变量在类加载时初始化。它们按照在类中出现的顺序进行初始化。&lt;/li>
+&lt;li>&lt;strong>静态初始化块&lt;/strong> 静态初始化块在静态变量初始化同时执行。多个静态初始化块按照它们在类中出现的顺序依次执行。&lt;/li>
+&lt;/ol>
+&lt;p>&lt;code>a3&lt;/code>, &lt;code>a4&lt;/code>, &lt;code>a5&lt;/code>中，&lt;code>a3&lt;/code>，&lt;code>a5&lt;/code>是静态变量、&lt;code>a4&lt;/code>在静态初始化块中被初始化，三者均按照出现顺序&lt;code>a3&lt;/code> - &lt;code>a4&lt;/code> - &lt;code>a5&lt;/code>被初始化。&lt;/p>
+&lt;h2 id="question-06">Question 06
+&lt;/h2>&lt;h4 id="1-这段代码能够证明在类的实例第一次被构造或类的静态属性和静态方法第一次被访问时jvm-会执行类加载吗如果不能请尝试修改代码并证明">1. 这段代码能够证明“在类的实例第一次被构造、或类的静态属性和静态方法第一次被访问时，JVM 会执行类加载”吗？如果不能，请尝试修改代码并证明。
+&lt;/h4>&lt;p>&lt;strong>不能。&lt;/strong> 需要在每个类的起始处打印执行的提示信息，修改后的代码如下：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">A&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">static&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Class A is being loaded&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int&lt;/span> value;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">static&lt;/span> A a1 &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> A(1);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#a6e22e">A&lt;/span>(&lt;span style="color:#66d9ef">int&lt;/span> i) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;initialize A&amp;#34;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> i);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> value &lt;span style="color:#f92672">=&lt;/span> i;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#a6e22e">A&lt;/span>(A a) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;copy from A&amp;#34;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> a.&lt;span style="color:#a6e22e">value&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> value &lt;span style="color:#f92672">=&lt;/span> a.&lt;span style="color:#a6e22e">value&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">static&lt;/span> A a2 &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> A(2);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">B&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">static&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Class B is being loaded&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> A a8;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// A a7 = new A(a6);&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> A a6 &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> A(6);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">static&lt;/span> A a3 &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> A(3);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">static&lt;/span> A a4;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">static&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> a4 &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> A(4);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">static&lt;/span> A a5 &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> A(5);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#a6e22e">B&lt;/span>(&lt;span style="color:#66d9ef">int&lt;/span> i) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;initialize B&amp;#34;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> i);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> a8 &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> A(8);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> A a7 &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> A(a6);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Initialization&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">static&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Class Initialization is being loaded&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">static&lt;/span> B b1 &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> B(1);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">static&lt;/span> B b2;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>(String&lt;span style="color:#f92672">[]&lt;/span> args) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;main begins&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> A a9 &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> A(9);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> b2 &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> B(2);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;main ends&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>该程序编译运行后输出结果：&lt;/p>
+&lt;pre tabindex="0">&lt;code>Class Initialization is being loaded
+Class B is being loaded
+Class A is being loaded
+initialize A1
+initialize A2
+initialize A3
+initialize A4
+initialize A5
+initialize A6
+copy from A6
+initialize B1
+initialize A8
+main begins
+initialize A9
+initialize A6
+copy from A6
+initialize B2
+initialize A8
+main ends
+&lt;/code>&lt;/pre>&lt;p>由前三行可知，类被加载的顺序是&lt;code>Initialization&lt;/code>, &lt;code>B&lt;/code>, &lt;code>A&lt;/code>, 与三者第一次被加载的顺序一致，故可以证明“在类的实例第一次被构造、或类的静态属性和静态方法第一次被访问时，JVM 会执行类加载”。&lt;/p>
+&lt;h4 id="2-基于static关键字带有static关键字的方法变量代码块可以调用什么反过来不带有static关键字的方法变量代码块可以调用什么带有static关键字的方法变量-or-不带有static关键字的方法变量-or-都可以">2. 基于&lt;code>static&lt;/code>关键字，带有&lt;code>static&lt;/code>关键字的方法、变量、代码块可以调用什么？反过来，不带有&lt;code>static&lt;/code>关键字的方法、变量、代码块可以调用什么？(带有&lt;code>static&lt;/code>关键字的方法、变量 or 不带有&lt;code>static&lt;/code>关键字的方法、变量 or 都可以)
+&lt;/h4>&lt;ul>
+&lt;li>
+&lt;p>带有&lt;code>static&lt;/code>关键字的方法、变量、代码块只能调用其他带有&lt;code>static&lt;/code>关键字的方法、变量、代码块。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>不带有&lt;code>static&lt;/code>关键字的方法、变量、代码块可以调用带有&lt;code>static&lt;/code>关键字的方法、变量、代码块，也可以调用其他不带&lt;code>static&lt;/code>关键字的方法、变量、代码块。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="question-07">Question 07
+&lt;/h2>&lt;p>不可以，其他的外部类不能通过 &lt;code>new Singleton()&lt;/code> 来构造一个新的 &lt;code>Singleton&lt;/code> 变量。&lt;/p>
+&lt;h2 id="question-08">Question 08
+&lt;/h2>&lt;ul>
+&lt;li>
+&lt;p>因为 &lt;code>Singleton&lt;/code> 类的构造方法是私有的，此类只能在 &lt;code>Singleton&lt;/code> 类的内部被调用。外部类无法访问这个私有构造方法，因此无法创造更多实例，最多只可能有由 &lt;code>Singleton&lt;/code> 类自己创造的 1 个实例同时存在。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>唯一实例在第一次调用 &lt;code>getInstance()&lt;/code> 方法时被构造。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="question-09">Question 09
+&lt;/h2>&lt;p>下列代码可以从外部调用 &lt;code>Singleton&lt;/code> 类的 &lt;code>foo()&lt;/code>：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">TestSingleton&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>(String&lt;span style="color:#f92672">[]&lt;/span> args) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// 获取 Singleton 类的唯一实例&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Singleton singletonInstance &lt;span style="color:#f92672">=&lt;/span> Singleton.&lt;span style="color:#a6e22e">getInstance&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// 调用 Singleton 类的 foo() 方法&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> singletonInstance.&lt;span style="color:#a6e22e">foo&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="question-10">Question 10
+&lt;/h2>&lt;p>代码见&lt;code>./Q10/TestPerson.java&lt;/code>, &lt;a class="link" href="https://github.com/charcai/BUAA-OOP-2024/blob/main/Lab02/23373381-%e8%94%a1%e5%bd%a6%e6%81%92-Lab02/Q10/TestPerson.java" target="_blank" rel="noopener"
+>点此跳转&lt;/a>&lt;/p>
+&lt;h2 id="question-11">Question 11
+&lt;/h2>&lt;p>代码见&lt;code>./Q11/Solution.java&lt;/code>, &lt;a class="link" href="https://github.com/charcai/BUAA-OOP-2024/tree/main/Lab02/23373381-%e8%94%a1%e5%bd%a6%e6%81%92-Lab02/Q11/Solution.java" target="_blank" rel="noopener"
+>点此跳转&lt;/a>&lt;/p></description></item><item><title>北航软工: 面向对象程序设计 Lab01</title><link>https://charactex.com/post/2024/11/oop-lab01/</link><pubDate>Tue, 05 Nov 2024 00:00:00 +0000</pubDate><guid>https://charactex.com/post/2024/11/oop-lab01/</guid><description>&lt;blockquote>
 &lt;p>题面与所有提及的文件均保存在作者的GitHub中，&lt;a class="link" href="https://github.com/charcai/BUAA-OOP-2024/tree/main/Lab01" target="_blank" rel="noopener"
 >点击这里&lt;/a>查看。&lt;/p>
 &lt;/blockquote>

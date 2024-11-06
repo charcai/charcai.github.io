@@ -6,9 +6,15 @@
 &lt;h2 id="question-01">Question 01
 &lt;/h2>&lt;h4 id="1-注释标记的哪些行会导致编译错误将错误截图并说明原因">1. 注释标记的哪些行会导致编译错误？&lt;strong>将错误截图，并说明原因&lt;/strong>。
 &lt;/h4>&lt;p>第 4 行会编译错误。&lt;/p>
-&lt;p>&lt;img src="https://charactex.com/Q01.png"
+&lt;p>&lt;img src="https://charactex.com/post/2024/11/oop-lab02/Q01.png"
+width="1164"
+height="232"
+srcset="https://charactex.com/post/2024/11/oop-lab02/Q01_hu17032442000326604195.png 480w, https://charactex.com/post/2024/11/oop-lab02/Q01_hu10325693223605987935.png 1024w"
 loading="lazy"
 alt="error"
+class="gallery-image"
+data-flex-grow="501"
+data-flex-basis="1204px"
 >&lt;/p>
 &lt;p>在方法中声明的变量需手动设置初始值后方可正常调用，此处 &lt;code>m&lt;/code> 没有赋初始值。&lt;/p>
 &lt;h4 id="2-区分变量-x-和-m-回答谁需要初始化才能使用为什么">2. 区分变量 &lt;code>x&lt;/code> 和 &lt;code>m&lt;/code> ，&lt;strong>回答谁需要初始化才能使用，为什么&lt;/strong>

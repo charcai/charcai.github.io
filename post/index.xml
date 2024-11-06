@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Charactex's Blog</title><link>https://charactex.com/post/</link><description>Recent content in Posts on Charactex's Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 06 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://charactex.com/post/index.xml" rel="self" type="application/rss+xml"/><item><title>北航软工: 面向对象程序设计 Lab02</title><link>https://charactex.com/post/2024/11/oop-lab02/</link><pubDate>Wed, 06 Nov 2024 00:00:00 +0000</pubDate><guid>https://charactex.com/post/2024/11/oop-lab02/</guid><description>&lt;h1 id="lab-02-assignment">Lab 02 Assignment
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Charactex's Blog</title><link>https://charactex.com/post/</link><description>Recent content in Posts on Charactex's Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>charactex@outlook.com (Charactex)</managingEditor><webMaster>charactex@outlook.com (Charactex)</webMaster><lastBuildDate>Wed, 06 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://charactex.com/post/index.xml" rel="self" type="application/rss+xml"/><item><title>北航软工: 面向对象程序设计 Lab02</title><link>https://charactex.com/post/2024/11/oop-lab02/</link><pubDate>Wed, 06 Nov 2024 00:00:00 +0000</pubDate><author>charactex@outlook.com (Charactex)</author><guid>https://charactex.com/post/2024/11/oop-lab02/</guid><description>&lt;h1 id="lab-02-assignment">Lab 02 Assignment
 &lt;/h1>&lt;blockquote>
 &lt;p>题面与所有提及的文件均保存在作者的GitHub中，&lt;a class="link" href="https://github.com/charcai/BUAA-OOP-2024/tree/main/Lab02" target="_blank" rel="noopener"
 >点击这里&lt;/a>查看。&lt;/p>
@@ -176,7 +176,7 @@ main ends
 >点此跳转&lt;/a>&lt;/p>
 &lt;h2 id="question-11">Question 11
 &lt;/h2>&lt;p>代码见&lt;code>./Q11/Solution.java&lt;/code>, &lt;a class="link" href="https://github.com/charcai/BUAA-OOP-2024/tree/main/Lab02/23373381-%e8%94%a1%e5%bd%a6%e6%81%92-Lab02/Q11/Solution.java" target="_blank" rel="noopener"
->点此跳转&lt;/a>&lt;/p></description></item><item><title>北航软工: 面向对象程序设计 Lab01</title><link>https://charactex.com/post/2024/11/oop-lab01/</link><pubDate>Tue, 05 Nov 2024 00:00:00 +0000</pubDate><guid>https://charactex.com/post/2024/11/oop-lab01/</guid><description>&lt;blockquote>
+>点此跳转&lt;/a>&lt;/p></description></item><item><title>北航软工: 面向对象程序设计 Lab01</title><link>https://charactex.com/post/2024/11/oop-lab01/</link><pubDate>Tue, 05 Nov 2024 00:00:00 +0000</pubDate><author>charactex@outlook.com (Charactex)</author><guid>https://charactex.com/post/2024/11/oop-lab01/</guid><description>&lt;blockquote>
 &lt;p>题面与所有提及的文件均保存在作者的GitHub中，&lt;a class="link" href="https://github.com/charcai/BUAA-OOP-2024/tree/main/Lab01" target="_blank" rel="noopener"
 >点击这里&lt;/a>查看。&lt;/p>
 &lt;/blockquote>
@@ -544,7 +544,7 @@ alt="res"
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> auntie.&lt;span style="color:#a6e22e">cook&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;豆腐鱼汤&amp;#34;&lt;/span>);
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>C++ STL之priority_queue优先队列</title><link>https://charactex.com/post/2018/06/priority_queue/</link><pubDate>Thu, 28 Jun 2018 00:00:00 +0000</pubDate><guid>https://charactex.com/post/2018/06/priority_queue/</guid><description>&lt;h1 id="介绍">介绍
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>C++ STL之priority_queue优先队列</title><link>https://charactex.com/post/2018/06/priority_queue/</link><pubDate>Thu, 28 Jun 2018 00:00:00 +0000</pubDate><author>charactex@outlook.com (Charactex)</author><guid>https://charactex.com/post/2018/06/priority_queue/</guid><description>&lt;h1 id="介绍">介绍
 &lt;/h1>&lt;p>priority_queue, 又称优先队列，是C++ STL库的重要组成部分之一。&lt;br>
 priority_queue的定义在头文件&lt;code>&amp;lt;queue&amp;gt;&lt;/code>中，因此需要:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cpp" data-lang="cpp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#include&lt;/span> &lt;span style="color:#75715e">&amp;lt;queue&amp;gt;&lt;/span>&lt;span style="color:#75715e">

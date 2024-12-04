@@ -1,5 +1,5 @@
-<!doctype html><html lang=zh-cn dir=ltr><head><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1'><meta name=description content="介绍 priority_queue, 又称优先队列，是C++ STL库的重要组成部分之一。\npriority_queue的定义在头文件<queue>中，因此需要:\n#include <queue> 它允许用户为队列中元素设置优先级，放置元素的时候不是直接放到队尾，而是放置到比它优先级低的元素前面，标准库默认使用 < 操作符来确定优先级关系。\n"><title>C++ STL之priority_queue优先队列</title>
-<link rel=canonical href=https://charactex.com/post/2018/06/priority_queue/><link rel=stylesheet href=/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css><meta property='og:title' content="C++ STL之priority_queue优先队列"><meta property='og:description' content="介绍 priority_queue, 又称优先队列，是C++ STL库的重要组成部分之一。\npriority_queue的定义在头文件<queue>中，因此需要:\n#include <queue> 它允许用户为队列中元素设置优先级，放置元素的时候不是直接放到队尾，而是放置到比它优先级低的元素前面，标准库默认使用 < 操作符来确定优先级关系。\n"><meta property='og:url' content='https://charactex.com/post/2018/06/priority_queue/'><meta property='og:site_name' content="Charactex's Blog"><meta property='og:type' content='article'><meta property='article:section' content='Post'><meta property='article:tag' content='C++'><meta property='article:tag' content='STL'><meta property='article:tag' content='优先队列'><meta property='article:tag' content='priority_queue'><meta property='article:tag' content='queue'><meta property='article:published_time' content='2018-06-28T00:00:00+00:00'><meta property='article:modified_time' content='2018-06-28T00:00:00+00:00'><meta name=twitter:title content="C++ STL之priority_queue优先队列"><meta name=twitter:description content="介绍 priority_queue, 又称优先队列，是C++ STL库的重要组成部分之一。\npriority_queue的定义在头文件<queue>中，因此需要:\n#include <queue> 它允许用户为队列中元素设置优先级，放置元素的时候不是直接放到队尾，而是放置到比它优先级低的元素前面，标准库默认使用 < 操作符来确定优先级关系。\n"><script type=text/javascript src="//api.tongjiniao.com/c?_=711611808610734080" async></script></head><body class=article-page><script>(function(){const e="StackColorScheme";localStorage.getItem(e)||localStorage.setItem(e,"auto")})()</script><script>(function(){const t="StackColorScheme",e=localStorage.getItem(t),n=window.matchMedia("(prefers-color-scheme: dark)").matches===!0;e=="dark"||e==="auto"&&n?document.documentElement.dataset.scheme="dark":document.documentElement.dataset.scheme="light"})()</script><div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky"><button class="hamburger hamburger--spin" type=button id=toggle-menu aria-label="Toggle Menu">
+<!doctype html><html lang=zh-cn dir=ltr><head><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1'><meta name=description content="介绍 priority_queue, 又称优先队列，是C++ STL库的重要组成部分之一。\npriority_queue的定义在头文件<queue>中，因此需要:\n1 #include <queue> 它允许用户为队列中元素设置优先级，放置元素的时候不是直接放到队尾，而是放置到比它优先级低的元素前面，标准库默认使用 < 操作符来确定优先级关系。\n"><title>C++ STL之priority_queue优先队列</title>
+<link rel=canonical href=https://charactex.com/post/2018/06/priority_queue/><link rel=stylesheet href=/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css><meta property='og:title' content="C++ STL之priority_queue优先队列"><meta property='og:description' content="介绍 priority_queue, 又称优先队列，是C++ STL库的重要组成部分之一。\npriority_queue的定义在头文件<queue>中，因此需要:\n1 #include <queue> 它允许用户为队列中元素设置优先级，放置元素的时候不是直接放到队尾，而是放置到比它优先级低的元素前面，标准库默认使用 < 操作符来确定优先级关系。\n"><meta property='og:url' content='https://charactex.com/post/2018/06/priority_queue/'><meta property='og:site_name' content="Charactex's Blog"><meta property='og:type' content='article'><meta property='article:section' content='Post'><meta property='article:tag' content='C++'><meta property='article:tag' content='STL'><meta property='article:tag' content='优先队列'><meta property='article:tag' content='priority_queue'><meta property='article:tag' content='queue'><meta property='article:published_time' content='2018-06-28T00:00:00+00:00'><meta property='article:modified_time' content='2018-06-28T00:00:00+00:00'><meta name=twitter:title content="C++ STL之priority_queue优先队列"><meta name=twitter:description content="介绍 priority_queue, 又称优先队列，是C++ STL库的重要组成部分之一。\npriority_queue的定义在头文件<queue>中，因此需要:\n1 #include <queue> 它允许用户为队列中元素设置优先级，放置元素的时候不是直接放到队尾，而是放置到比它优先级低的元素前面，标准库默认使用 < 操作符来确定优先级关系。\n"><script type=text/javascript src="//api.tongjiniao.com/c?_=711611808610734080" async></script></head><body class=article-page><script>(function(){const e="StackColorScheme";localStorage.getItem(e)||localStorage.setItem(e,"auto")})()</script><script>(function(){const t="StackColorScheme",e=localStorage.getItem(t),n=window.matchMedia("(prefers-color-scheme: dark)").matches===!0;e=="dark"||e==="auto"&&n?document.documentElement.dataset.scheme="dark":document.documentElement.dataset.scheme="light"})()</script><div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky"><button class="hamburger hamburger--spin" type=button id=toggle-menu aria-label="Toggle Menu">
 <span class=hamburger-box><span class=hamburger-inner></span></span></button><header><figure class=site-avatar><a href=/><img src=/avatar_hu17842245128141198383.JPG width=300 height=300 class=site-logo loading=lazy alt=Avatar></a></figure><div class=site-meta><h1 class=site-name><a href=/>Charactex's Blog</a></h1><h2 class=site-description></h2></div></header><ol class=menu-social><li><a href=https://github.com/charcai/ target=_blank title=GitHub rel=me><svg class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6.0 00-1.3-3.2 4.2 4.2.0 00-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3.0 00-6.2.0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2.0 00-.1 3.2A4.6 4.6.0 004 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg></a></li><li><a href=mailto:charactex@outlook.com target=_blank title=Mail rel=me><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-mail"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 7a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V7z"/><path d="M3 7l9 6 9-6"/></svg></a></li><li><a href=https://charactex.com/post/index.xml target=_blank title=RSS rel=me><svg class="icon icon-tabler icon-tabler-rss" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="5" cy="19" r="1"/><path d="M4 4a16 16 0 0116 16"/><path d="M4 11a9 9 0 019 9"/></svg></a></li></ol><ol class=menu id=main-menu><li><a href=/ target=_blank><svg class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="5 12 3 12 12 3 21 12 19 12"/><path d="M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/><path d="M9 21v-6a2 2 0 012-2h2a2 2 0 012 2v6"/></svg>
 <span>Home</span></a></li><li><a href=/page/archives/><svg class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><rect x="3" y="4" width="18" height="4" rx="2"/><path d="M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
 <span>Archives</span></a></li><li><a href=/page/search/><svg class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg>
@@ -8,81 +8,155 @@
 <svg class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="16" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg>
 <span>Dark Mode</span></li></ol></li></ol></aside><aside class="sidebar right-sidebar sticky"><section class="widget archives"><div class=widget-icon><svg class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><line x1="5" y1="9" x2="19" y2="9"/><line x1="5" y1="15" x2="19" y2="15"/><line x1="11" y1="4" x2="7" y2="20"/><line x1="17" y1="4" x2="13" y2="20"/></svg></div><h2 class="widget-title section-title">Table of contents</h2><div class=widget--toc><nav id=TableOfContents><ul><li><a href=#系统类型>系统类型</a></li><li><a href=#自定义类型>自定义类型</a></li></ul><ul><li><a href=#系统类型-1>系统类型</a></li><li><a href=#自定义类型-1>自定义类型</a></li></ul></nav></div></section></aside><main class="main full-width"><article class=main-article><header class=article-header><div class=article-details><header class=article-category><a href=/categories/c++/>C++</a></header><div class=article-title-wrapper><h2 class=article-title><a href=/post/2018/06/priority_queue/>C++ STL之priority_queue优先队列</a></h2></div><footer class=article-time><div><svg class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg>
 <time class=article-time--published>2018 / 06 / 28</time></div><div><svg class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
-<time class=article-time--reading>2 minute read</time></div></footer></div></header><section class=article-content><h1 id=介绍>介绍</h1><p>priority_queue, 又称优先队列，是C++ STL库的重要组成部分之一。<br>priority_queue的定义在头文件<code>&lt;queue></code>中，因此需要:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;queue&gt;</span><span style=color:#75715e>
-</span></span></span></code></pre></div><p>它允许用户为队列中元素设置优先级，放置元素的时候不是直接放到队尾，而是放置到比它优先级低的元素前面，标准库默认使用 &lt; 操作符来确定优先级关系。</p><p>它的原型是</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp><span style=display:flex><span><span style=color:#66d9ef>template</span> <span style=color:#f92672>&lt;</span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>T</span>, <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Container</span> <span style=color:#f92672>=</span> vector<span style=color:#f92672>&lt;</span>T<span style=color:#f92672>&gt;</span>,
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Compare</span> <span style=color:#f92672>=</span> less<span style=color:#f92672>&lt;</span><span style=color:#66d9ef>typename</span> Container<span style=color:#f92672>::</span>value_type<span style=color:#f92672>&gt;</span> <span style=color:#f92672>&gt;</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>priority_queue</span>;
-</span></span></code></pre></div><p>其中第一个为元素类型；第二个为承载优先队列的容器类型，一般是vector；第三个是比较函数。但由于后两个已经带有默认值，所以一般使用时只需要<code>priority_queue&lt;int></code>这样就行了。</p><p>注：优先队列的优先级关系为值大的优先级高、值小的优先级低，而优先级高的放在队列前面，所以对于默认类型，它的内部元素总是从大到小的。</p><h1 id=常用操作>常用操作</h1><ul><li>压入: <code>push()</code></li><li>弹出: <code>pop()</code></li><li>取队首元素: <code>top()</code> //与一般的队列不一样，不用<code>front()</code></li><li>判空: <code>empty()</code></li><li>取大小: <code>size</code></li></ul><h1 id=样例程序>样例程序</h1><h2 id=系统类型>系统类型</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp><span style=display:flex><span><span style=color:#75715e>//程序1
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;queue&gt;</span><span style=color:#75715e>
-</span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;iostream&gt;</span><span style=color:#75715e>
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>using</span> <span style=color:#66d9ef>namespace</span> std;
-</span></span><span style=display:flex><span>priority_queue<span style=color:#f92672>&lt;</span><span style=color:#66d9ef>int</span><span style=color:#f92672>&gt;</span> q;
-</span></span><span style=display:flex><span><span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span>()
-</span></span><span style=display:flex><span>{
-</span></span><span style=display:flex><span>    q.push(<span style=color:#ae81ff>1</span>);
-</span></span><span style=display:flex><span>    q.push(<span style=color:#ae81ff>5</span>);
-</span></span><span style=display:flex><span>    q.push(<span style=color:#ae81ff>3</span>);
-</span></span><span style=display:flex><span>    q.push(<span style=color:#ae81ff>9</span>);
-</span></span><span style=display:flex><span>    q.push(<span style=color:#ae81ff>2</span>);
-</span></span><span style=display:flex><span>    cout <span style=color:#f92672>&lt;&lt;</span> q.size() <span style=color:#f92672>&lt;&lt;</span> endl;
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>while</span>(<span style=color:#f92672>!</span>q.empty())
-</span></span><span style=display:flex><span>    {
-</span></span><span style=display:flex><span>        cout <span style=color:#f92672>&lt;&lt;</span> q.top() <span style=color:#f92672>&lt;&lt;</span> <span style=color:#e6db74>&#34; &#34;</span>;
-</span></span><span style=display:flex><span>	    q.pop();
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>    cout <span style=color:#f92672>&lt;&lt;</span> endl;
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;
-</span></span><span style=display:flex><span>}
-</span></span></code></pre></div><p>这段程序的输出是：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#ae81ff>5</span>
-</span></span><span style=display:flex><span><span style=color:#ae81ff>9</span> <span style=color:#ae81ff>5</span> <span style=color:#ae81ff>3</span> <span style=color:#ae81ff>2</span> <span style=color:#ae81ff>1</span>
-</span></span></code></pre></div><h2 id=自定义类型>自定义类型</h2><p>使用自定义类型，就要重载<code>&lt;</code>运算符了。</p><p>例:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp><span style=display:flex><span><span style=color:#75715e>//程序2
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;queue&gt;</span><span style=color:#75715e>
-</span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;iostream&gt;</span><span style=color:#75715e>
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>using</span> <span style=color:#66d9ef>namespace</span> std;
-</span></span><span style=display:flex><span><span style=color:#66d9ef>struct</span> <span style=color:#a6e22e>node</span>
-</span></span><span style=display:flex><span>{
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>int</span> value;
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>bool</span> <span style=color:#66d9ef>operator</span> <span style=color:#f92672>&lt;</span> (node x) <span style=color:#66d9ef>const</span> <span style=color:#75715e>//const不能少
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>	{
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span> <span style=color:#66d9ef>this</span> <span style=color:#f92672>-&gt;</span> value <span style=color:#f92672>&lt;</span> x.value;
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span>	node(<span style=color:#66d9ef>int</span> _v)<span style=color:#f92672>:</span> value(_v) {}
-</span></span><span style=display:flex><span>};
-</span></span><span style=display:flex><span><span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span>()
-</span></span><span style=display:flex><span>{
-</span></span><span style=display:flex><span>	priority_queue<span style=color:#f92672>&lt;</span>node<span style=color:#f92672>&gt;</span> q;
-</span></span><span style=display:flex><span>	q.push(node(<span style=color:#ae81ff>3</span>));
-</span></span><span style=display:flex><span>	q.push(node(<span style=color:#ae81ff>5</span>));
-</span></span><span style=display:flex><span>	q.push(node(<span style=color:#ae81ff>10</span>));
-</span></span><span style=display:flex><span>	cout <span style=color:#f92672>&lt;&lt;</span> q.size() <span style=color:#f92672>&lt;&lt;</span> endl;
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>while</span>(<span style=color:#f92672>!</span>q.empty())
-</span></span><span style=display:flex><span>	{
-</span></span><span style=display:flex><span>		node tmp <span style=color:#f92672>=</span> q.top();
-</span></span><span style=display:flex><span>		q.pop();
-</span></span><span style=display:flex><span>		cout <span style=color:#f92672>&lt;&lt;</span> tmp.value <span style=color:#f92672>&lt;&lt;</span> <span style=color:#e6db74>&#34; &#34;</span>;
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span>	cout <span style=color:#f92672>&lt;&lt;</span> endl;
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;
-</span></span><span style=display:flex><span>}
-</span></span></code></pre></div><p>输出：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#ae81ff>3</span>
-</span></span><span style=display:flex><span><span style=color:#ae81ff>10</span> <span style=color:#ae81ff>5</span> <span style=color:#ae81ff>3</span>
-</span></span></code></pre></div><h1 id=改变优先级>改变优先级</h1><h2 id=系统类型-1>系统类型</h2><p>很多时候，我们需要由小到大排序，这时候就需要这样：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp><span style=display:flex><span>priority_queue<span style=color:#f92672>&lt;</span><span style=color:#66d9ef>int</span>, vector<span style=color:#f92672>&lt;</span><span style=color:#66d9ef>int</span><span style=color:#f92672>&gt;</span>, greater<span style=color:#f92672>&lt;</span><span style=color:#66d9ef>int</span><span style=color:#f92672>&gt;</span> <span style=color:#f92672>&gt;</span>pq;
-</span></span><span style=display:flex><span><span style=color:#75715e>//三个int要一致！
-</span></span></span></code></pre></div><p>注：最后两个<code>></code>号千万不要写在一起，否则有可能被编译器误认为是<code>>></code>运算符！</p><p>如果以这行代码替换上面程序1里的定义的话，运行结果就会是这样：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#ae81ff>5</span>
-</span></span><span style=display:flex><span><span style=color:#ae81ff>1</span> <span style=color:#ae81ff>2</span> <span style=color:#ae81ff>3</span> <span style=color:#ae81ff>5</span> <span style=color:#ae81ff>9</span>
-</span></span></code></pre></div><h2 id=自定义类型-1>自定义类型</h2><p>自定义类型也是一个道理，但要重载<code>></code>运算符：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp><span style=display:flex><span><span style=color:#66d9ef>struct</span> <span style=color:#a6e22e>node</span>
-</span></span><span style=display:flex><span>{
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>int</span> value;
-</span></span><span style=display:flex><span>	<span style=color:#66d9ef>bool</span> <span style=color:#66d9ef>operator</span> <span style=color:#f92672>&gt;</span> (node x) <span style=color:#66d9ef>const</span>
-</span></span><span style=display:flex><span>	{
-</span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span> <span style=color:#66d9ef>this</span> <span style=color:#f92672>-&gt;</span> value <span style=color:#f92672>&gt;</span> x.value;
-</span></span><span style=display:flex><span>	}
-</span></span><span style=display:flex><span>	node(<span style=color:#66d9ef>int</span> _v)<span style=color:#f92672>:</span> value(_v) {}
-</span></span><span style=display:flex><span>};
-</span></span><span style=display:flex><span>priority_queue<span style=color:#f92672>&lt;</span>node, vector<span style=color:#f92672>&lt;</span>node<span style=color:#f92672>&gt;</span>, greater<span style=color:#f92672>&lt;</span>node<span style=color:#f92672>&gt;</span> <span style=color:#f92672>&gt;</span> q;
-</span></span><span style=display:flex><span><span style=color:#75715e>//三个node也要一样！
-</span></span></span></code></pre></div><p>替换程序2相关内容，输出：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#ae81ff>3</span>
-</span></span><span style=display:flex><span><span style=color:#ae81ff>3</span> <span style=color:#ae81ff>5</span> <span style=color:#ae81ff>10</span>
-</span></span></code></pre></div></section><footer class=article-footer><section class=article-tags><a href=/tags/c++/>C++</a>
+<time class=article-time--reading>2 minute read</time></div></footer></div></header><section class=article-content><h1 id=介绍>介绍</h1><p>priority_queue, 又称优先队列，是C++ STL库的重要组成部分之一。<br>priority_queue的定义在头文件<code>&lt;queue></code>中，因此需要:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=line><span class=cl><span class=cp>#include</span> <span class=cpf>&lt;queue&gt;</span><span class=cp>
+</span></span></span></code></pre></td></tr></table></div></div><p>它允许用户为队列中元素设置优先级，放置元素的时候不是直接放到队尾，而是放置到比它优先级低的元素前面，标准库默认使用 &lt; 操作符来确定优先级关系。</p><p>它的原型是</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=line><span class=cl><span class=k>template</span> <span class=o>&lt;</span><span class=k>class</span> <span class=nc>T</span><span class=p>,</span> <span class=k>class</span> <span class=nc>Container</span> <span class=o>=</span> <span class=n>vector</span><span class=o>&lt;</span><span class=n>T</span><span class=o>&gt;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=k>class</span> <span class=nc>Compare</span> <span class=o>=</span> <span class=n>less</span><span class=o>&lt;</span><span class=k>typename</span> <span class=n>Container</span><span class=o>::</span><span class=n>value_type</span><span class=o>&gt;</span> <span class=o>&gt;</span> <span class=k>class</span> <span class=nc>priority_queue</span><span class=p>;</span>
+</span></span></code></pre></td></tr></table></div></div><p>其中第一个为元素类型；第二个为承载优先队列的容器类型，一般是vector；第三个是比较函数。但由于后两个已经带有默认值，所以一般使用时只需要<code>priority_queue&lt;int></code>这样就行了。</p><p>注：优先队列的优先级关系为值大的优先级高、值小的优先级低，而优先级高的放在队列前面，所以对于默认类型，它的内部元素总是从大到小的。</p><h1 id=常用操作>常用操作</h1><ul><li>压入: <code>push()</code></li><li>弹出: <code>pop()</code></li><li>取队首元素: <code>top()</code> //与一般的队列不一样，不用<code>front()</code></li><li>判空: <code>empty()</code></li><li>取大小: <code>size</code></li></ul><h1 id=样例程序>样例程序</h1><h2 id=系统类型>系统类型</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=line><span class=cl><span class=c1>//程序1
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=cp>#include</span> <span class=cpf>&lt;queue&gt;</span><span class=cp>
+</span></span></span><span class=line><span class=cl><span class=cp>#include</span> <span class=cpf>&lt;iostream&gt;</span><span class=cp>
+</span></span></span><span class=line><span class=cl><span class=cp></span><span class=k>using</span> <span class=k>namespace</span> <span class=n>std</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=n>priority_queue</span><span class=o>&lt;</span><span class=kt>int</span><span class=o>&gt;</span> <span class=n>q</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=kt>int</span> <span class=nf>main</span><span class=p>()</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=n>q</span><span class=p>.</span><span class=n>push</span><span class=p>(</span><span class=mi>1</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=n>q</span><span class=p>.</span><span class=n>push</span><span class=p>(</span><span class=mi>5</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=n>q</span><span class=p>.</span><span class=n>push</span><span class=p>(</span><span class=mi>3</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=n>q</span><span class=p>.</span><span class=n>push</span><span class=p>(</span><span class=mi>9</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=n>q</span><span class=p>.</span><span class=n>push</span><span class=p>(</span><span class=mi>2</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=n>q</span><span class=p>.</span><span class=n>size</span><span class=p>()</span> <span class=o>&lt;&lt;</span> <span class=n>endl</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>while</span><span class=p>(</span><span class=o>!</span><span class=n>q</span><span class=p>.</span><span class=n>empty</span><span class=p>())</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=n>q</span><span class=p>.</span><span class=n>top</span><span class=p>()</span> <span class=o>&lt;&lt;</span> <span class=s>&#34; &#34;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	    <span class=n>q</span><span class=p>.</span><span class=n>pop</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=n>endl</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>这段程序的输出是：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=m>5</span>
+</span></span><span class=line><span class=cl><span class=m>9</span> <span class=m>5</span> <span class=m>3</span> <span class=m>2</span> <span class=m>1</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=自定义类型>自定义类型</h2><p>使用自定义类型，就要重载<code>&lt;</code>运算符了。</p><p>例:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=line><span class=cl><span class=c1>//程序2
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=cp>#include</span> <span class=cpf>&lt;queue&gt;</span><span class=cp>
+</span></span></span><span class=line><span class=cl><span class=cp>#include</span> <span class=cpf>&lt;iostream&gt;</span><span class=cp>
+</span></span></span><span class=line><span class=cl><span class=cp></span><span class=k>using</span> <span class=k>namespace</span> <span class=n>std</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=k>struct</span> <span class=nc>node</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=kt>int</span> <span class=n>value</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=kt>bool</span> <span class=k>operator</span> <span class=o>&lt;</span> <span class=p>(</span><span class=n>node</span> <span class=n>x</span><span class=p>)</span> <span class=k>const</span> <span class=c1>//const不能少
+</span></span></span><span class=line><span class=cl><span class=c1></span>	<span class=p>{</span>
+</span></span><span class=line><span class=cl>		<span class=k>return</span> <span class=k>this</span> <span class=o>-&gt;</span> <span class=n>value</span> <span class=o>&lt;</span> <span class=n>x</span><span class=p>.</span><span class=n>value</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=p>}</span>
+</span></span><span class=line><span class=cl>	<span class=n>node</span><span class=p>(</span><span class=kt>int</span> <span class=n>_v</span><span class=p>)</span><span class=o>:</span> <span class=n>value</span><span class=p>(</span><span class=n>_v</span><span class=p>)</span> <span class=p>{}</span>
+</span></span><span class=line><span class=cl><span class=p>};</span>
+</span></span><span class=line><span class=cl><span class=kt>int</span> <span class=nf>main</span><span class=p>()</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=n>priority_queue</span><span class=o>&lt;</span><span class=n>node</span><span class=o>&gt;</span> <span class=n>q</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=n>q</span><span class=p>.</span><span class=n>push</span><span class=p>(</span><span class=n>node</span><span class=p>(</span><span class=mi>3</span><span class=p>));</span>
+</span></span><span class=line><span class=cl>	<span class=n>q</span><span class=p>.</span><span class=n>push</span><span class=p>(</span><span class=n>node</span><span class=p>(</span><span class=mi>5</span><span class=p>));</span>
+</span></span><span class=line><span class=cl>	<span class=n>q</span><span class=p>.</span><span class=n>push</span><span class=p>(</span><span class=n>node</span><span class=p>(</span><span class=mi>10</span><span class=p>));</span>
+</span></span><span class=line><span class=cl>	<span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=n>q</span><span class=p>.</span><span class=n>size</span><span class=p>()</span> <span class=o>&lt;&lt;</span> <span class=n>endl</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>while</span><span class=p>(</span><span class=o>!</span><span class=n>q</span><span class=p>.</span><span class=n>empty</span><span class=p>())</span>
+</span></span><span class=line><span class=cl>	<span class=p>{</span>
+</span></span><span class=line><span class=cl>		<span class=n>node</span> <span class=n>tmp</span> <span class=o>=</span> <span class=n>q</span><span class=p>.</span><span class=n>top</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>		<span class=n>q</span><span class=p>.</span><span class=n>pop</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>		<span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=n>tmp</span><span class=p>.</span><span class=n>value</span> <span class=o>&lt;&lt;</span> <span class=s>&#34; &#34;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=p>}</span>
+</span></span><span class=line><span class=cl>	<span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=n>endl</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>return</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>输出：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=m>3</span>
+</span></span><span class=line><span class=cl><span class=m>10</span> <span class=m>5</span> <span class=m>3</span>
+</span></span></code></pre></td></tr></table></div></div><h1 id=改变优先级>改变优先级</h1><h2 id=系统类型-1>系统类型</h2><p>很多时候，我们需要由小到大排序，这时候就需要这样：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=line><span class=cl><span class=n>priority_queue</span><span class=o>&lt;</span><span class=kt>int</span><span class=p>,</span> <span class=n>vector</span><span class=o>&lt;</span><span class=kt>int</span><span class=o>&gt;</span><span class=p>,</span> <span class=n>greater</span><span class=o>&lt;</span><span class=kt>int</span><span class=o>&gt;</span> <span class=o>&gt;</span><span class=n>pq</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=c1>//三个int要一致！
+</span></span></span></code></pre></td></tr></table></div></div><p>注：最后两个<code>></code>号千万不要写在一起，否则有可能被编译器误认为是<code>>></code>运算符！</p><p>如果以这行代码替换上面程序1里的定义的话，运行结果就会是这样：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=m>5</span>
+</span></span><span class=line><span class=cl><span class=m>1</span> <span class=m>2</span> <span class=m>3</span> <span class=m>5</span> <span class=m>9</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=自定义类型-1>自定义类型</h2><p>自定义类型也是一个道理，但要重载<code>></code>运算符：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=line><span class=cl><span class=k>struct</span> <span class=nc>node</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=kt>int</span> <span class=n>value</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=kt>bool</span> <span class=k>operator</span> <span class=o>&gt;</span> <span class=p>(</span><span class=n>node</span> <span class=n>x</span><span class=p>)</span> <span class=k>const</span>
+</span></span><span class=line><span class=cl>	<span class=p>{</span>
+</span></span><span class=line><span class=cl>		<span class=k>return</span> <span class=k>this</span> <span class=o>-&gt;</span> <span class=n>value</span> <span class=o>&gt;</span> <span class=n>x</span><span class=p>.</span><span class=n>value</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=p>}</span>
+</span></span><span class=line><span class=cl>	<span class=n>node</span><span class=p>(</span><span class=kt>int</span> <span class=n>_v</span><span class=p>)</span><span class=o>:</span> <span class=n>value</span><span class=p>(</span><span class=n>_v</span><span class=p>)</span> <span class=p>{}</span>
+</span></span><span class=line><span class=cl><span class=p>};</span>
+</span></span><span class=line><span class=cl><span class=n>priority_queue</span><span class=o>&lt;</span><span class=n>node</span><span class=p>,</span> <span class=n>vector</span><span class=o>&lt;</span><span class=n>node</span><span class=o>&gt;</span><span class=p>,</span> <span class=n>greater</span><span class=o>&lt;</span><span class=n>node</span><span class=o>&gt;</span> <span class=o>&gt;</span> <span class=n>q</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=c1>//三个node也要一样！
+</span></span></span></code></pre></td></tr></table></div></div><p>替换程序2相关内容，输出：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=m>3</span>
+</span></span><span class=line><span class=cl><span class=m>3</span> <span class=m>5</span> <span class=m>10</span>
+</span></span></code></pre></td></tr></table></div></div></section><footer class=article-footer><section class=article-tags><a href=/tags/c++/>C++</a>
 <a href=/tags/stl/>STL</a>
 <a href=/tags/%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97/>优先队列</a>
 <a href=/tags/priority_queue/>Priority_queue</a>

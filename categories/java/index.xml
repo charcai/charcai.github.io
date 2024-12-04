@@ -1,4 +1,251 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Java on Charactex's Blog</title><link>https://charactex.com/categories/java/</link><description>Recent content in Java on Charactex's Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>charactex@outlook.com (Charactex)</managingEditor><webMaster>charactex@outlook.com (Charactex)</webMaster><lastBuildDate>Wed, 06 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://charactex.com/categories/java/index.xml" rel="self" type="application/rss+xml"/><item><title>北航软工: 面向对象程序设计 Lab02</title><link>https://charactex.com/post/2024/11/oop-lab02/</link><pubDate>Wed, 06 Nov 2024 00:00:00 +0000</pubDate><author>charactex@outlook.com (Charactex)</author><guid>https://charactex.com/post/2024/11/oop-lab02/</guid><description>&lt;h1 id="lab-02-assignment">Lab 02 Assignment
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Java on Charactex's Blog</title><link>https://charactex.com/categories/java/</link><description>Recent content in Java on Charactex's Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>charactex@outlook.com (Charactex)</managingEditor><webMaster>charactex@outlook.com (Charactex)</webMaster><lastBuildDate>Thu, 05 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://charactex.com/categories/java/index.xml" rel="self" type="application/rss+xml"/><item><title>北航软工: 面向对象程序设计 Lab 3</title><link>https://charactex.com/post/2024/12/oop-lab03/</link><pubDate>Thu, 05 Dec 2024 00:00:00 +0000</pubDate><author>charactex@outlook.com (Charactex)</author><guid>https://charactex.com/post/2024/12/oop-lab03/</guid><description>&lt;h1 id="lab-3-problem-set">Lab 3 Problem Set
+&lt;/h1>&lt;blockquote>
+&lt;p>题面附件代码见&lt;a class="link" href="https://github.com/charcai/BUAA-OOP-2024/tree/main/Lab03/Lab3-Code" target="_blank" rel="noopener"
+>https://github.com/charcai/BUAA-OOP-2024/tree/main/Lab03/Lab3-Code&lt;/a>&lt;/p>
+&lt;p>解答代码见&lt;a class="link" href="https://github.com/charcai/BUAA-OOP-2024/tree/main/Lab03/" target="_blank" rel="noopener"
+>https://github.com/charcai/BUAA-OOP-2024/tree/main/Lab03/&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="question1-package">Question1: Package
+&lt;/h2>&lt;p>浏览 &lt;code>Code&lt;/code> 目录下的 &lt;code>Question01&lt;/code> 目录，不允许变更目录结构和文件位置，只允许在文件中添加 &lt;code>package&lt;/code> 和 &lt;code>import&lt;/code> 语句，使根目录下 &lt;code>build&lt;/code> 和 &lt;code>test&lt;/code> 文件中的指令可以无报错顺利执行。&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;code>build&lt;/code> 和 &lt;code>test&lt;/code> 为脚本文件，直接在 IDE 或文本编辑器中打开即可看到其中的指令。&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;strong>PS.不要轻易相信IDEA自动加的，报红的是可以通过编译运行的&lt;/strong>&lt;/p>
+&lt;p>你可以把 Question01 目录复制到解答的压缩包中，或者在解答报告中直接以文字或截图说明你的改动。&lt;/p>
+&lt;h2 id="question2方法重写">Question2：方法重写
+&lt;/h2>&lt;p>阅读 &lt;code>Code&lt;/code> 目录下的 &lt;code>Question02&lt;/code> 目录，根据你对方法重写规则的理解，回答下列问题并改正代码错误&lt;/p>
+&lt;ol>
+&lt;li>&lt;code>Worker.java&lt;/code> 的 &lt;code>1&lt;/code> 号注释处正确吗，如果不正确应该怎么改正，为什么？&lt;/li>
+&lt;li>如果 &lt;code>Worker.java&lt;/code> 内 &lt;code>eat()&lt;/code> 方法的修饰符改为 &lt;code>private&lt;/code>，可以通过编译吗，为什么？&lt;/li>
+&lt;li>&lt;code>Teacher.java&lt;/code> 的 &lt;code>2&lt;/code> 号注释处正确吗，如果不正确应该怎么改正，为什么？&lt;/li>
+&lt;li>&lt;code>Teacher.java&lt;/code> 的 &lt;code>3&lt;/code> 号注释处正确吗，如果不正确应该怎么改正，为什么？&lt;/li>
+&lt;li>属性、静态方法、非静态方法，哪些可以覆盖（重写 / &lt;code>override&lt;/code>），哪些可以隐藏？&lt;/li>
+&lt;/ol>
+&lt;p>你可以把 &lt;code>Question02&lt;/code> 目录复制到解答的压缩包中，或者在解答报告中直接以文字或截图说明你的改动。&lt;/p>
+&lt;h2 id="question3-super-vs-this">Question3: super VS this
+&lt;/h2>&lt;p>完成下面表格，&lt;strong>复制或截图在解答报告中&lt;/strong>&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: left">区别点&lt;/th>
+&lt;th style="text-align: left">this&lt;/th>
+&lt;th style="text-align: center">super&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: left">引用（代表什么）&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">使用方式&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">调用构造方法（调用谁的构造方法，放在第几条语句）&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">查找范围（查找顺序）&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="question4-final">Question4: final
+&lt;/h2>&lt;p>&lt;strong>在实验报告中回答下列问题&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>&lt;code>final&lt;/code> 修饰的类可以被继承吗？可以继承其它类吗？&lt;/li>
+&lt;li>&lt;code>final&lt;/code> 修饰的方法可以被重写吗？&lt;/li>
+&lt;li>&lt;code>final&lt;/code> 修饰的变量相当于什么？&lt;/li>
+&lt;li>&lt;code>final&lt;/code> 修饰的引用类型变量可以改变其引用地址吗？可以改变对象的内部属性的值吗？&lt;/li>
+&lt;/ol>
+&lt;h2 id="question5-权限">Question5: 权限
+&lt;/h2>&lt;p>阅读 &lt;code>Code&lt;/code> 目录下的 &lt;code>Question05&lt;/code> 目录，根据你对访问权限的理解。将文件中所有无法通过编译的语句注释掉。&lt;/p>
+&lt;p>你遇到的问题可能会集中在 &lt;code>protected&lt;/code> 和默认访问权限。
+从这次实验和上一次实验，可以引申出两个问题，你需要在解答中说出你的想法。&lt;/p>
+&lt;ul>
+&lt;li>Lab 2 中的单例模式，或者说所有构造方法都是 &lt;code>private&lt;/code> 时，可能有子类吗？&lt;/li>
+&lt;li>&lt;code>final&lt;/code> 类可以视为所有构造方法都是 &lt;code>private&lt;/code> 的类吗？&lt;/li>
+&lt;/ul>
+&lt;p>你可以把 Question05 目录复制到解答的压缩包中，或者在解答报告中直接以文字或截图说明你的改动。&lt;/p>
+&lt;h2 id="question6-shape">Question6: Shape
+&lt;/h2>&lt;p>阅读下面的二维形状类 &lt;code>Shape&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">abstract&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Shape&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">protected&lt;/span> &lt;span style="color:#66d9ef">double&lt;/span> a;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">protected&lt;/span> &lt;span style="color:#66d9ef">double&lt;/span> b;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#a6e22e">Shape&lt;/span>() { &lt;span style="color:#66d9ef">this&lt;/span>(0.&lt;span style="color:#a6e22e">0&lt;/span>, 0.&lt;span style="color:#a6e22e">0&lt;/span>); }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#a6e22e">Shape&lt;/span>(&lt;span style="color:#66d9ef">double&lt;/span> a, &lt;span style="color:#66d9ef">double&lt;/span> b) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">a&lt;/span> &lt;span style="color:#f92672">=&lt;/span> a;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">b&lt;/span> &lt;span style="color:#f92672">=&lt;/span> b;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">/** calcArea
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * 计算形状的面积
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * @return 面积
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">abstract&lt;/span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">double&lt;/span> &lt;span style="color:#a6e22e">calcArea&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">/* 其他必要的方法，比如 getter 和 setter */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>你的任务是：&lt;/p>
+&lt;ul>
+&lt;li>编写 &lt;code>Rectangle&lt;/code> 类，&lt;code>a&lt;/code> 和 &lt;code>b&lt;/code> 分别代表矩形两条边的长度（长和宽）；&lt;/li>
+&lt;li>编写 &lt;code>Rhombus&lt;/code> 类，&lt;code>a&lt;/code> 和 &lt;code>b&lt;/code> 分别代表两条菱形对角线的长度；&lt;/li>
+&lt;li>编写 &lt;code>Ellipse&lt;/code> 类，&lt;code>a&lt;/code> 和 &lt;code>b&lt;/code> 分别代表椭圆两个半轴（半长轴和半短轴）的长度；&lt;/li>
+&lt;li>编写一个测试类，构造子类对象并测试。&lt;/li>
+&lt;/ul>
+&lt;p>注意：&lt;/p>
+&lt;ul>
+&lt;li>上述三个类都继承自 &lt;code>Shape&lt;/code> 类，都必须要 &lt;code>override&lt;/code> 方法 &lt;code>calcArea&lt;/code>；&lt;/li>
+&lt;li>&lt;code>a&lt;/code> 和 &lt;code>b&lt;/code> 都不能是负数，当通过 &lt;code>constructor&lt;/code> 或者 &lt;code>setter&lt;/code> 设定为负数时，将对应的值置为 &lt;code>0.0&lt;/code>，或 &lt;code>throw&lt;/code> 异常；&lt;/li>
+&lt;li>&lt;code>a&lt;/code> 和 &lt;code>b&lt;/code> 的大小关系没有任何约束，没有 &lt;code>a&lt;/code> 必须不小于 &lt;code>b&lt;/code> 的说法。&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>&lt;strong>题外话&lt;/strong>&lt;/p>
+&lt;p>我们知道属性不设置为 &lt;code>public&lt;/code> 是为了保护数据，如果 &lt;code>a&lt;/code> 和 &lt;code>b&lt;/code> 在 &lt;code>Shape&lt;/code> 中的访问权限被设置为 &lt;code>private&lt;/code>，在不添加新的属性的情况下，子类想要实现自己的 &lt;code>calcArea()&lt;/code>该怎么办？在解答中写出你的思考。&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="question7-车车">Question7: 车车
+&lt;/h2>&lt;p>定义一个 &lt;code>Vehicle&lt;/code> 类，在其中声明一个属性代表这个交通工具有多少个轮子，提供对这个属性的 &lt;code>setter&lt;/code>。提供轮子类、引擎类。创建几个 &lt;code>Vehicle&lt;/code> 的导出类：&lt;code>Motorbike&lt;/code>、&lt;code>Car&lt;/code>、&lt;code>Tank&lt;/code>。自由发挥，在测试类中构造这几种交通工具，并测试功能。&lt;/p>
+&lt;p>其中 &lt;code>Motorbike&lt;/code> 类需增加两个属性：&lt;code>driver&lt;/code> 和 &lt;code>passenger&lt;/code> 表示司机和乘客。增加你觉得合适的方法。&lt;/p>
+&lt;p>定义一个 &lt;code>Person&lt;/code> 类，加入你觉得合适的属性和方法，生成 &lt;code>brother&lt;/code> 和 &lt;code>sister&lt;/code> 两个对象，结合 &lt;code>Motorbike&lt;/code> 试图实现以下场景：&lt;/p>
+&lt;ul>
+&lt;li>生成三个对象（&lt;code>Motorbike&lt;/code> 实例 &lt;code>motorbike&lt;/code>，&lt;code>Person&lt;/code> 实例 &lt;code>brother&lt;/code>、&lt;code>sister&lt;/code>）&lt;/li>
+&lt;li>设置 &lt;code>motorbike&lt;/code> 的司机与乘客为 &lt;code>brother&lt;/code> 和 &lt;code>sister&lt;/code>&lt;/li>
+&lt;li>打印 &lt;code>motorbike&lt;/code> 的信息（尽可能详细）&lt;/li>
+&lt;li>调用 &lt;code>sister&lt;/code> 的 &lt;code>say()&lt;/code> 方法，输出“不像我，我只会心疼 giegie~”&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>备注：这道题目绝不是 2321 同学们的助教出的。&lt;/p>
+&lt;/blockquote>
+&lt;h1 id="lab-3-assignment">Lab 3 Assignment
+&lt;/h1>&lt;h2 id="question-01">Question 01
+&lt;/h2>&lt;p>代码打包为文件夹，见 &lt;code>./Question01/&lt;/code> 目录。&lt;/p>
+&lt;h2 id="question-02">Question 02
+&lt;/h2>&lt;p>修改后的文件见&lt;code>./Question02/&lt;/code>。&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;code>Worker.java&lt;/code> 的 &lt;code>1&lt;/code> 号注释处正确吗，如果不正确应该怎么改正，为什么？&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>不正确。&lt;/strong> 可以将 &lt;code>@Override&lt;/code> 行删除。&lt;/p>
+&lt;p>&lt;code>Worker.eat()&lt;/code> 与 &lt;code>People.eat()&lt;/code> 所传递的参数不同，构成 &lt;code>Overload&lt;/code> 而非 &lt;code>Override&lt;/code>，故签名不正确。&lt;/p>
+&lt;/blockquote>
+&lt;/li>
+&lt;li>
+&lt;p>如果 &lt;code>Worker.java&lt;/code> 内 &lt;code>eat()&lt;/code> 方法的修饰符改为 &lt;code>private&lt;/code>，可以通过编译吗，为什么？&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>不可以。&lt;/strong> 在 &lt;code>Java&lt;/code> 中，子类 &lt;code>Override&lt;/code> 的方法不能比父类中被 &lt;code>Override&lt;/code> 的方法有更低的访问级别。&lt;/p>
+&lt;/blockquote>
+&lt;/li>
+&lt;li>
+&lt;p>Teacher.java的 &lt;code>2&lt;/code> 号注释处正确吗，如果不正确应该怎么改正，为什么？&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>不正确。&lt;/strong> 在 &lt;code>Java&lt;/code> 中，子类 &lt;code>Override&lt;/code> 的方法应与父类中被 &lt;code>Override&lt;/code> 的方法有相同的返回类型。本代码中，&lt;code>Teacher.work()&lt;/code> 返回类型是&lt;code>People&lt;/code>，而 &lt;code>Worker.work()&lt;/code> 返回类型是 &lt;code>Worker&lt;/code>。&lt;/p>
+&lt;p>可将 &lt;code>Teacher.work()&lt;/code> 的返回类型改为 &lt;code>Worker&lt;/code>, 将返回值改为 &lt;code>return new Worker();&lt;/code>。&lt;/p>
+&lt;/blockquote>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>Teacher.java&lt;/code> 的 &lt;code>3&lt;/code> 号注释处正确吗，如果不正确应该怎么改正，为什么？&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>不正确。&lt;/strong> 问题同上，在 &lt;code>Java&lt;/code> 中，子类 &lt;code>Override&lt;/code> 的方法应与父类中被 &lt;code>Override&lt;/code> 的方法有相同的返回类型。&lt;/p>
+&lt;p>可将 &lt;code>Worker.salary()&lt;/code> 的返回类型改为 &lt;code>long&lt;/code>。&lt;/p>
+&lt;/blockquote>
+&lt;/li>
+&lt;li>
+&lt;p>属性、静态方法、非静态方法，哪些可以覆盖（重写 / override），哪些可以隐藏？&lt;/p>
+&lt;blockquote>
+&lt;ul>
+&lt;li>&lt;strong>属性&lt;/strong>不能被覆盖，可以被隐藏。&lt;/li>
+&lt;li>&lt;strong>静态方法&lt;/strong>不能被覆盖，可以被隐藏。&lt;/li>
+&lt;li>&lt;strong>非静态方法&lt;/strong>可以被覆盖，不能被隐藏。&lt;/li>
+&lt;/ul>
+&lt;/blockquote>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="question-03">Question 03
+&lt;/h2>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: center">区别点&lt;/th>
+&lt;th style="text-align: center">&lt;code>this&lt;/code>&lt;/th>
+&lt;th style="text-align: center">&lt;code>super&lt;/code>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: center">引用&lt;/td>
+&lt;td style="text-align: center">当前对象的引用&lt;/td>
+&lt;td style="text-align: center">父类对象的引用&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">使用方式&lt;/td>
+&lt;td style="text-align: center">用于访问当前对象的成员变量和方法&lt;/td>
+&lt;td style="text-align: center">用于访问当前对象的成员变量和方法&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">调用构造方法&lt;/td>
+&lt;td style="text-align: center">调用当前类的其他构造方法，必须放在构造方法的第一条语句&lt;/td>
+&lt;td style="text-align: center">调用父类的构造方法，必须放在构造方法的第一条语句&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">查找范围&lt;/td>
+&lt;td style="text-align: center">从当前类开始查找&lt;/td>
+&lt;td style="text-align: center">从父类开始查找&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="question-04">Question 04
+&lt;/h2>&lt;ol>
+&lt;li>
+&lt;p>&lt;code>final&lt;/code> 修饰的类可以被继承吗？可以继承其它类吗？&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;code>final&lt;/code> 修饰的类&lt;strong>不能&lt;/strong>被继承，&lt;strong>可以&lt;/strong>继承其它类。&lt;/p>
+&lt;/blockquote>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>final&lt;/code> 修饰的方法可以被重写吗？&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;code>final&lt;/code> 修饰的方法&lt;strong>不可以&lt;/strong>被重写。&lt;/p>
+&lt;/blockquote>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>final&lt;/code> 修饰的变量相当于什么？&lt;/p>
+&lt;blockquote>
+&lt;p>相当于常量。&lt;/p>
+&lt;/blockquote>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>final&lt;/code> 修饰的引用类型变量可以改变其引用地址吗？可以改变对象的内部属性的值吗？&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;code>final&lt;/code> 修饰的引用类型变量&lt;strong>不可以&lt;/strong>改变其引用地址，&lt;strong>可以&lt;/strong>改变对象的内部属性的值。&lt;/p>
+&lt;/blockquote>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="question-05">Question 05
+&lt;/h2>&lt;p>修改后的代码见 &lt;code>./Question 05/&lt;/code> 目录。&lt;/p>
+&lt;blockquote>
+&lt;p>解答:&lt;/p>
+&lt;ul>
+&lt;li>Lab 2 中的单例模式，或者说所有构造方法都是 private 时，&lt;strong>不可能&lt;/strong>有子类。&lt;/li>
+&lt;li>&lt;code>final&lt;/code> 类&lt;strong>不完全可以&lt;/strong>视为所有构造方法都是 &lt;code>private&lt;/code> 的类。二者都不能被继承、不能被扩展，但区别在于，&lt;code>final&lt;/code> 类在有 &lt;code>public&lt;/code> 或 &lt;code>protected&lt;/code> 的构造方法时可以被实例化，而所有构造方法都是 &lt;code>private&lt;/code> 的类不能被外部实例化。&lt;/li>
+&lt;/ul>
+&lt;/blockquote>
+&lt;h2 id="question-06">Question 06
+&lt;/h2>&lt;p>工程文件见 &lt;code>./Question06/&lt;/code>目录。&lt;/p>
+&lt;p>&lt;strong>思考题：&lt;/strong> 如果 &lt;code>a&lt;/code> 和 &lt;code>b&lt;/code> 在 &lt;code>Shape&lt;/code> 中的访问权限被设置为 &lt;code>private&lt;/code>，在不添加新的属性的情况下，子类想要实现自己的 &lt;code>calcArea()&lt;/code> 该怎么办？&lt;/p>
+&lt;blockquote>
+&lt;p>可以在 &lt;code>Shape&lt;/code> 中实现两个方法 &lt;code>getA()&lt;/code> 与 &lt;code>getB()&lt;/code>， 返回 &lt;code>a&lt;/code> 和 &lt;code>b&lt;/code> 的值，便可直接被外部方法调用。&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="question-07">Question 07
+&lt;/h2>&lt;p>工程文件见 &lt;code>./Question07/&lt;/code> 目录。&lt;/p>
+&lt;ul>
+&lt;li>交通工具的测试类为 &lt;code>./Question07/TestVehicles.java&lt;/code>，&lt;/li>
+&lt;li>场景的测试类为&lt;code>./Question07/TestMotorbike.java&lt;/code>。&lt;/li>
+&lt;/ul></description></item><item><title>北航软工: 面向对象程序设计 Lab 2</title><link>https://charactex.com/post/2024/11/oop-lab02/</link><pubDate>Wed, 06 Nov 2024 00:00:00 +0000</pubDate><author>charactex@outlook.com (Charactex)</author><guid>https://charactex.com/post/2024/11/oop-lab02/</guid><description>&lt;h1 id="lab-2-assignment">Lab 2 Assignment
 &lt;/h1>&lt;blockquote>
 &lt;p>题面与所有提及的文件均保存在作者的GitHub中，&lt;a class="link" href="https://github.com/charcai/BUAA-OOP-2024/tree/main/Lab02" target="_blank" rel="noopener"
 >点击这里&lt;/a>查看。&lt;/p>
@@ -176,11 +423,11 @@ main ends
 >点此跳转&lt;/a>&lt;/p>
 &lt;h2 id="question-11">Question 11
 &lt;/h2>&lt;p>代码见&lt;code>./Q11/Solution.java&lt;/code>, &lt;a class="link" href="https://github.com/charcai/BUAA-OOP-2024/tree/main/Lab02/23373381-%e8%94%a1%e5%bd%a6%e6%81%92-Lab02/Q11/Solution.java" target="_blank" rel="noopener"
->点此跳转&lt;/a>&lt;/p></description></item><item><title>北航软工: 面向对象程序设计 Lab01</title><link>https://charactex.com/post/2024/11/oop-lab01/</link><pubDate>Tue, 05 Nov 2024 00:00:00 +0000</pubDate><author>charactex@outlook.com (Charactex)</author><guid>https://charactex.com/post/2024/11/oop-lab01/</guid><description>&lt;blockquote>
+>点此跳转&lt;/a>&lt;/p></description></item><item><title>北航软工: 面向对象程序设计 Lab 1</title><link>https://charactex.com/post/2024/11/oop-lab01/</link><pubDate>Tue, 05 Nov 2024 00:00:00 +0000</pubDate><author>charactex@outlook.com (Charactex)</author><guid>https://charactex.com/post/2024/11/oop-lab01/</guid><description>&lt;blockquote>
 &lt;p>题面与所有提及的文件均保存在作者的GitHub中，&lt;a class="link" href="https://github.com/charcai/BUAA-OOP-2024/tree/main/Lab01" target="_blank" rel="noopener"
 >点击这里&lt;/a>查看。&lt;/p>
 &lt;/blockquote>
-&lt;h1 id="lab-01-assignment">Lab 01 Assignment
+&lt;h1 id="lab-1-assignment">Lab 1 Assignment
 &lt;/h1>&lt;h2 id="question-01">Question 01
 &lt;/h2>&lt;p>包名命名为&lt;code>Q1&lt;/code>，在命令行使用&lt;code>javac Q1/Main.java&lt;/code>命令编译，并使用&lt;code>java Q1.Main&lt;/code>命令运行生成的字节码。&lt;/p>
 &lt;p>&lt;img src="https://charactex.com/post/2024/11/oop-lab01/Q1.png"

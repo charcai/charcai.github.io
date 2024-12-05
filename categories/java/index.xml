@@ -937,16 +937,28 @@ data-flex-basis="368px"
 &lt;/div>&lt;ul>
 &lt;li>
 &lt;p>输入5
-&lt;img src="https://charactex.com/Q8/1.png"
+&lt;img src="https://charactex.com/post/2024/11/oop-lab01/Q8.png"
+width="1062"
+height="410"
+srcset="https://charactex.com/post/2024/11/oop-lab01/Q8_hu14851572783408402956.png 480w, https://charactex.com/post/2024/11/oop-lab01/Q8_hu3285747973960250768.png 1024w"
 loading="lazy"
 alt="1.png"
+class="gallery-image"
+data-flex-grow="259"
+data-flex-basis="621px"
 >&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>输入8
-&lt;img src="https://charactex.com/Q8/2.png"
+&lt;img src="https://charactex.com/post/2024/11/oop-lab01/Q8_2.png"
+width="1072"
+height="540"
+srcset="https://charactex.com/post/2024/11/oop-lab01/Q8_2_hu1773812537798326486.png 480w, https://charactex.com/post/2024/11/oop-lab01/Q8_2_hu15479777738660353222.png 1024w"
 loading="lazy"
 alt="2.png"
+class="gallery-image"
+data-flex-grow="198"
+data-flex-basis="476px"
 >&lt;/p>
 &lt;/li>
 &lt;/ul>
@@ -1086,14 +1098,26 @@ alt="2.png"
 &lt;/h4>&lt;p>可以。本质上即手动将可变个参数打包为参数数组传递给方法。&lt;/p>
 &lt;h4 id="3-如果还有静态方法-string-strscatstring-args-同时存在代码能通过编译吗给出-ide-的编译结果的截图">(3) 如果还有静态方法 String strscat(String[] args) 同时存在，代码能通过编译吗？给出 IDE 的编译结果的截图。
 &lt;/h4>&lt;p>不能通过编译。&lt;/p>
-&lt;p>&lt;img src="https://charactex.com/Q11/Q11.png"
+&lt;p>&lt;img src="https://charactex.com/post/2024/11/oop-lab01/Q11.png"
+width="1138"
+height="244"
+srcset="https://charactex.com/post/2024/11/oop-lab01/Q11_hu7704597532973392313.png 480w, https://charactex.com/post/2024/11/oop-lab01/Q11_hu9678302382392287034.png 1024w"
 loading="lazy"
 alt="Q11"
+class="gallery-image"
+data-flex-grow="466"
+data-flex-basis="1119px"
 >&lt;/p>
 &lt;h4 id="4-如果我们声明的是-string-strscatstring-argsstrscata-b-c-这样的调用还能通过编译吗给出-ide-的编译结果的截图">(4) 如果我们声明的是 String strscat(String[] args)，strscat(&amp;ldquo;a&amp;rdquo;, &amp;ldquo;b&amp;rdquo;, &amp;ldquo;c&amp;rdquo;) 这样的调用还能通过编译吗？给出 IDE 的编译结果的截图。
-&lt;/h4>&lt;p>&lt;img src="https://charactex.com/Q11/Q11_2.png"
+&lt;/h4>&lt;p>&lt;img src="https://charactex.com/post/2024/11/oop-lab01/Q11_2.png"
+width="1132"
+height="496"
+srcset="https://charactex.com/post/2024/11/oop-lab01/Q11_2_hu8148460745218145143.png 480w, https://charactex.com/post/2024/11/oop-lab01/Q11_2_hu8330028724102376441.png 1024w"
 loading="lazy"
 alt="Q11_2"
+class="gallery-image"
+data-flex-grow="228"
+data-flex-basis="547px"
 >&lt;/p>
 &lt;h2 id="question-12">Question 12
 &lt;/h2>&lt;p>样例运行结果：&lt;/p>

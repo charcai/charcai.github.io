@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hugo on Charactex's Blog</title><link>https://charactex.com/tags/hugo/</link><description>Recent content in Hugo on Charactex's Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>charactex@outlook.com (Charactex)</managingEditor><webMaster>charactex@outlook.com (Charactex)</webMaster><lastBuildDate>Tue, 10 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://charactex.com/tags/hugo/index.xml" rel="self" type="application/rss+xml"/><item><title>Hugo 静态博客网站同步到境内服务器加速访问</title><link>https://charactex.com/post/2024/12/hugo-domestic-accelerate/</link><pubDate>Tue, 10 Dec 2024 00:00:00 +0000</pubDate><author>charactex@outlook.com (Charactex)</author><guid>https://charactex.com/post/2024/12/hugo-domestic-accelerate/</guid><description>&lt;p>不少同学都习惯使用 GitHub Pages 托管自己建造的静态博客网站，但是在国内访问速度会比较慢、可能遇到无法访问的情况。本文介绍如何将建造的网站同步到境内服务器，提高访问速度。&lt;/p>
+&lt;h2 id="1-准备工作">1. 准备工作
+&lt;/h2>&lt;p>你需要准备:&lt;/p>
+&lt;ul>
+&lt;li>一台境内服务器；&lt;/li>
+&lt;li>一个域名，切记需完成备案工作；&lt;/li>
+&lt;li>一个 GitHub Pages 站点，使用 Hugo、Jekyll、Hexo 生成的静态网站均可。&lt;/li>
+&lt;/ul>
+&lt;h2 id="2-配置服务器">2. 配置服务器
+&lt;/h2>&lt;h3 id="21-安装-1panelrsync">2.1 安装 1Panel、rsync
+&lt;/h3>&lt;blockquote>
+&lt;p>笔者选用 1Panel 作为服务器管理面板，方便管理网站、数据库等服务。你也可以选择其他面板，如宝塔、VestaCP 等，或者直接通过命令行进行操作。&lt;/p>
+&lt;/blockquote>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">apt install rsync
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> sudo bash quick_start.sh
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="22-创建站点">2.2 创建站点
+&lt;/h3>&lt;p>使用生成的账号、密码，登陆 1Panel 面板。
+&lt;img src="https://charactex.com/post/2024/12/hugo-domestic-accelerate/1.png"
+width="3338"
+height="1714"
+srcset="https://charactex.com/post/2024/12/hugo-domestic-accelerate/1_hu3724835740282501764.png 480w, https://charactex.com/post/2024/12/hugo-domestic-accelerate/1_hu2097933452630378624.png 1024w"
+loading="lazy"
+alt="网站管理页面"
+class="gallery-image"
+data-flex-grow="194"
+data-flex-basis="467px"
+>
+第一次使用此面板请点击自动安装 OpenResty，所有选项保持默认即可；点击“创建网站”按钮，在顶部的网站类型中选择“静态网站”，填入网站域名并点击创建。&lt;/p>
+&lt;p>在 1Panel 的“网站”选项下打开“证书”标签页，申请证书后即可在网站设置页面使用证书开启 HTTPS 功能。&lt;/p>
+&lt;h3 id="23-添加同步用账户">2.3 添加同步用账户
+&lt;/h3>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">adduser deployuser &lt;span class="c1"># 创建一个新的账户用于同步&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">mkdir /home/deployuser/.ssh
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ssh-keygen -t rsa -b &lt;span class="m">4096&lt;/span> -C &lt;span class="s2">&amp;#34;charactex@outlook.com&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">touch /home/deployuser/.ssh/authorized_keys
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>创建 ssh 密钥对时注意填写保存路径为 &lt;code>/home/deployuser/.ssh/id_rsa&lt;/code>，并通过下面一行命令将公钥内容添加到 &lt;code>/home/deployuser/.ssh/authorized_keys&lt;/code> 文件中：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">cat /home/deployuser/.ssh/id_rsa.pub &amp;gt;&amp;gt; /home/deployuser/.ssh/authorized_keys
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>然后配置相关目录的访问权限：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">chmod &lt;span class="m">700&lt;/span> /home/deployuser/.ssh/
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">chmod &lt;span class="m">600&lt;/span> /home/deployuser/.ssh/authorized_keys
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">chown -R deployuser:deployuser /home/deployuser/.ssh
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">chown -R deployuser:deployuser /path/to/your/website
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>此处最后一行网站保存路径可在 1Panel 面板中查看。&lt;/p>
+&lt;h2 id="3-配置-github-仓库">3. 配置 GitHub 仓库
+&lt;/h2>&lt;h3 id="31-编写-github-actions-脚本">3.1 编写 GitHub Actions 脚本
+&lt;/h3>&lt;p>笔者的网站在每次将本地源代码 push 到 GitHub 后，将由 GitHub Actions 自动完成编译部署工作。向服务器推送编译好的静态网站，也可通过 GitHub Actions 自动完成。&lt;/p>
+&lt;p>在博客 repo 的根目录下，新建文件 &lt;code>.github/workflows/main.yml&lt;/code>，内容如下：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;span class="lnt">28
+&lt;/span>&lt;span class="lnt">29
+&lt;/span>&lt;span class="lnt">30
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-yaml" data-lang="yaml">&lt;span class="line">&lt;span class="cl">&lt;span class="nt">name&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">Sync to server&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">on&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">push&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">branches&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">main&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">jobs&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">build&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">runs-on&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">ubuntu-latest&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">steps&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="nt">name&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">checkout&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">uses&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">actions/checkout@v3&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">with&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">submodules&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kc">true&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="nt">name&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">Setup Hugo&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">uses&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">peaceiris/actions-hugo@v3&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">with&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">hugo-version&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;${{ steps.hugo-version.outputs.HUGO_VERSION }}&amp;#39;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">extended&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kc">true&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="nt">name&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">Build&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">run&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">hugo --minify&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="nt">name&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">Deploy to server&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">uses&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">burnett01/rsync-deployments@5.2&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">with&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">switches&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>-&lt;span class="l">avzr --delete&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">path&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">./public/&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">remote_path&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">/your/path/to/web/content/&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">remote_host&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">${{ secrets.SSH_IP }}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">remote_port&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">${{ secrets.SSH_PORT }}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">remote_user&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">${{ secrets.SSH_USER }}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">remote_key&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">${{ secrets.SSH_PRIVATE_KEY }&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>如果此前已使用 GitHub Actions 进行自动构建，则只需添加 &lt;code>Deploy to server&lt;/code> 步骤即可。&lt;/p>
+&lt;h3 id="32-配置-secrets">3.2 配置 Secrets
+&lt;/h3>&lt;p>在此仓库的 Secrets 中创建环境变量，位置为 &lt;code>Settings -&amp;gt; Secrets and variables -&amp;gt; Actions -&amp;gt; Manage repository secret&lt;/code>：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: left">名称&lt;/th>
+&lt;th style="text-align: left">内容&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: left">&lt;code>SSH_IP&lt;/code>&lt;/td>
+&lt;td style="text-align: left">服务器 IP 地址&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">&lt;code>SSH_PORT&lt;/code>&lt;/td>
+&lt;td style="text-align: left">SSH 端口号&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">&lt;code>SSH_USER&lt;/code>&lt;/td>
+&lt;td style="text-align: left">服务器用户名,即刚刚创建的 &lt;code>deployuser&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">&lt;code>SSH_PRIVATE_KEY&lt;/code>&lt;/td>
+&lt;td style="text-align: left">私钥内容，即刚刚创建的&lt;code>/home/deployuser/.ssh/id_rsa&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;blockquote>
+&lt;p>注意：&lt;code>remote_path&lt;/code> 为服务器上网站的路径，在 1Panel 中，是网站存储目录下的 &lt;code>index&lt;/code> 子目录；&lt;code>path&lt;/code> 一定要由 &lt;code>/&lt;/code> 结尾，代表将该目录下的内容（不包括该目录自身）同步。&lt;/p>
+&lt;/blockquote>
+&lt;p>保存并提交到 GitHub，即可自动触发同步功能。&lt;/p>
+&lt;h2 id="4-配置-dns-分流">4. 配置 DNS 分流
+&lt;/h2>&lt;p>在域名的 DNS 设置中，将来自海外的流量指向 GitHub Pages 官方服务器，将境内流量指向自己的服务器。&lt;/p>
+&lt;blockquote>
+&lt;p>注意：使用国内服务器请务必&lt;strong>在网站底部添加备案号&lt;/strong>&lt;/p>
+&lt;/blockquote>
+&lt;p>将对应端口放开，此时在境内访问网站即解析道内地服务器上，完成加速。&lt;/p></description></item></channel></rss>

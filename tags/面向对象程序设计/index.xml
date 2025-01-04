@@ -1,4 +1,130 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>面向对象程序设计 on Charactex's Blog</title><link>https://charactex.com/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/</link><description>Recent content in 面向对象程序设计 on Charactex's Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>charactex@outlook.com (Charactex)</managingEditor><webMaster>charactex@outlook.com (Charactex)</webMaster><lastBuildDate>Thu, 05 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://charactex.com/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/index.xml" rel="self" type="application/rss+xml"/><item><title>北航软工: 面向对象程序设计(2024) Lab 3</title><link>https://charactex.com/post/2024/12/oop-lab03/</link><pubDate>Thu, 05 Dec 2024 00:00:00 +0000</pubDate><author>charactex@outlook.com (Charactex)</author><guid>https://charactex.com/post/2024/12/oop-lab03/</guid><description>&lt;h1 id="lab-3">Lab 3
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>面向对象程序设计 on Charactex's Blog</title><link>https://charactex.com/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/</link><description>Recent content in 面向对象程序设计 on Charactex's Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>charactex@outlook.com (Charactex)</managingEditor><webMaster>charactex@outlook.com (Charactex)</webMaster><lastBuildDate>Sat, 04 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://charactex.com/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/index.xml" rel="self" type="application/rss+xml"/><item><title>AnonTalk 用户说明书: 面向对象程序设计(2024) 大作业</title><link>https://charactex.com/post/2025/01/anontalk-user-manual/</link><pubDate>Sat, 04 Jan 2025 00:00:00 +0000</pubDate><author>charactex@outlook.com (Charactex)</author><guid>https://charactex.com/post/2025/01/anontalk-user-manual/</guid><description>&lt;img src="https://charactex.com/post/2025/01/anontalk-user-manual/cover.jpg" alt="Featured image of post AnonTalk 用户说明书: 面向对象程序设计(2024) 大作业" />&lt;blockquote>
+&lt;p>本文档为北航软件工程课程面向对象程序设计(2024)大作业 AnonTalk 的用户说明书。&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="1-项目运行环境">1. 项目运行环境
+&lt;/h2>&lt;ul>
+&lt;li>浏览器: Google Chrome, Safari, Microsoft Edge 等现代内核浏览器&lt;/li>
+&lt;li>测试服务器: macOS Sequoia&lt;/li>
+&lt;li>JDK版本: 22&lt;/li>
+&lt;li>IDE: IntelliJ IDEA Ultimate 2024.1&lt;/li>
+&lt;li>数据库: MySQL 8.4.3，运行在 2C2G 的 Alibaba Cloud Linux 3 上；&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>注：涉及聊天、交友功能的网站若部署在云服务器生产环境需要额外进行备案审批，本项目暂未进行备案，仅供本地测试使用。&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="2-功能介绍">2. 功能介绍
+&lt;/h2>&lt;p>欢迎使用 AnonTalk 匿名匹配对话平台！本手册将为您提供 AnonTalk 的使用说明。&lt;/p>
+&lt;h3 id="1-用户注册登陆">1. 用户注册登陆
+&lt;/h3>&lt;p>访问网站首页，未登陆状态下自动跳转到登陆界面。
+&lt;img src="https://charactex.com/post/2025/01/anontalk-user-manual/images/login.png"
+width="3020"
+height="1726"
+srcset="https://charactex.com/post/2025/01/anontalk-user-manual/images/login_hu2845187869515565944.png 480w, https://charactex.com/post/2025/01/anontalk-user-manual/images/login_hu9551881648491638394.png 1024w"
+loading="lazy"
+alt="登陆"
+class="gallery-image"
+data-flex-grow="174"
+data-flex-basis="419px"
+>&lt;/p>
+&lt;p>点击“注册按钮，进入注册界面。
+&lt;img src="https://charactex.com/post/2025/01/anontalk-user-manual/images/register.png"
+width="3022"
+height="1726"
+srcset="https://charactex.com/post/2025/01/anontalk-user-manual/images/register_hu7639991102814519618.png 480w, https://charactex.com/post/2025/01/anontalk-user-manual/images/register_hu12610479365238374972.png 1024w"
+loading="lazy"
+alt="注册"
+class="gallery-image"
+data-flex-grow="175"
+data-flex-basis="420px"
+>&lt;/p>
+&lt;p>在注册界面填写自己的用户名、手机号、密码，点击“注册”按钮即可注册成功，进入网站首页。
+&lt;img src="https://charactex.com/post/2025/01/anontalk-user-manual/images/homepage.png"
+width="3016"
+height="1606"
+srcset="https://charactex.com/post/2025/01/anontalk-user-manual/images/homepage_hu12382105503672505266.png 480w, https://charactex.com/post/2025/01/anontalk-user-manual/images/homepage_hu6194616954071431823.png 1024w"
+loading="lazy"
+alt="首页"
+class="gallery-image"
+data-flex-grow="187"
+data-flex-basis="450px"
+>&lt;/p>
+&lt;blockquote>
+&lt;p>请妥善保存您的用户名和密码，以免丢失。若有遗忘，请联系管理员进行密码重置。&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="2-匿名匹配对话">2. 匿名匹配对话
+&lt;/h3>&lt;p>在首页，点击“匹配”按钮，进入匹配。&lt;/p>
+&lt;p>若匹配队列用户过少，系统将提示 &lt;strong>“匹配等待中”&lt;/strong>，请耐心等待。
+&lt;img src="https://charactex.com/post/2025/01/anontalk-user-manual/images/waiting.png"
+width="3020"
+height="1602"
+srcset="https://charactex.com/post/2025/01/anontalk-user-manual/images/waiting_hu11818415121240301101.png 480w, https://charactex.com/post/2025/01/anontalk-user-manual/images/waiting_hu5908296598458846360.png 1024w"
+loading="lazy"
+alt="匹配等待"
+class="gallery-image"
+data-flex-grow="188"
+data-flex-basis="452px"
+>&lt;/p>
+&lt;p>当匹配成功后，系统将自动跳转到对话界面。
+&lt;img src="https://charactex.com/post/2025/01/anontalk-user-manual/images/newChat.png"
+width="3014"
+height="1656"
+srcset="https://charactex.com/post/2025/01/anontalk-user-manual/images/newChat_hu2792324805657421763.png 480w, https://charactex.com/post/2025/01/anontalk-user-manual/images/newChat_hu11040392657644585084.png 1024w"
+loading="lazy"
+alt="新建聊天界面"
+class="gallery-image"
+data-flex-grow="182"
+data-flex-basis="436px"
+>&lt;/p>
+&lt;p>上方的消息框中显示了对话的历史消息。
+在下方输入框中输入消息，点击 “发送” 按钮或按下 &lt;code>Enter&lt;/code> 即可发送消息；
+&lt;img src="https://charactex.com/post/2025/01/anontalk-user-manual/images/chatDetail.png"
+width="3022"
+height="1652"
+srcset="https://charactex.com/post/2025/01/anontalk-user-manual/images/chatDetail_hu6884572408385089627.png 480w, https://charactex.com/post/2025/01/anontalk-user-manual/images/chatDetail_hu16825211816057573471.png 1024w"
+loading="lazy"
+alt="聊天展示"
+class="gallery-image"
+data-flex-grow="182"
+data-flex-basis="439px"
+>&lt;/p>
+&lt;h3 id="3-个人设置">3. 个人设置
+&lt;/h3>&lt;p>点击页面左侧的“个人设置”按钮，进入个人设置页面。
+&lt;img src="https://charactex.com/post/2025/01/anontalk-user-manual/images/settings.png"
+width="1511"
+height="863"
+srcset="https://charactex.com/post/2025/01/anontalk-user-manual/images/settings_hu17152984489039868074.png 480w, https://charactex.com/post/2025/01/anontalk-user-manual/images/settings_hu13476055871266368352.png 1024w"
+loading="lazy"
+alt="个人设置"
+class="gallery-image"
+data-flex-grow="175"
+data-flex-basis="420px"
+>&lt;/p>
+&lt;p>用户ID为系统自动生成，是用户的唯一标识，不可更改。&lt;/p>
+&lt;p>此界面可更改自己的用户名、性别、爱好等信息，以及手机号、密码等安全设置，点击 “保存” 按钮即可保存更改。&lt;/p>
+&lt;h3 id="4-交友广场">4. 交友广场
+&lt;/h3>&lt;p>点击页面左侧的 “交友广场” 按钮，进入交友广场页面。
+&lt;img src="https://charactex.com/post/2025/01/anontalk-user-manual/images/square.png"
+width="3022"
+height="1712"
+srcset="https://charactex.com/post/2025/01/anontalk-user-manual/images/square_hu11011526699969959654.png 480w, https://charactex.com/post/2025/01/anontalk-user-manual/images/square_hu7819335502899877875.png 1024w"
+loading="lazy"
+alt="交友广场"
+class="gallery-image"
+data-flex-grow="176"
+data-flex-basis="423px"
+>&lt;/p>
+&lt;p>左侧显示了所有用户的帖子，右侧可以新建并发送一条帖子。&lt;/p>
+&lt;h2 id="3-异常处理">3. 异常处理
+&lt;/h2>&lt;h3 id="1-用户名重复">1. 用户名重复
+&lt;/h3>&lt;p>若注册时用户名重复，系统将提示 &lt;strong>“用户名已存在”&lt;/strong>，请更换用户名后重新注册。&lt;/p>
+&lt;h3 id="2-匹配等待中">2. 匹配等待中
+&lt;/h3>&lt;p>若匹配队列用户过少，系统将提示 &lt;strong>“匹配等待中”&lt;/strong>，请耐心等待。&lt;/p>
+&lt;h3 id="3-用户名或密码错误">3. 用户名或密码错误
+&lt;/h3>&lt;p>请检查自己的用户名、密码是否有误，若有遗忘，请联系管理员进行密码重置。&lt;/p>
+&lt;h3 id="4-登陆注册失败请重试">4. 登陆/注册失败，请重试！
+&lt;/h3>&lt;p>若登陆或注册失败，请检查网络连接，或联系管理员检查数据库连接、通信是否有误。&lt;/p>
+&lt;h3 id="5-其他异常">5. 其他异常
+&lt;/h3>&lt;p>我们在浏览器的 Console、 IDE 的 终端 等地方输出了详细的异常信息，您可以查看这些信息来帮助我们更好地定位问题。&lt;/p></description></item><item><title>北航软工: 面向对象程序设计(2024) Lab 3</title><link>https://charactex.com/post/2024/12/oop-lab03/</link><pubDate>Thu, 05 Dec 2024 00:00:00 +0000</pubDate><author>charactex@outlook.com (Charactex)</author><guid>https://charactex.com/post/2024/12/oop-lab03/</guid><description>&lt;h1 id="lab-3">Lab 3
 &lt;/h1>&lt;h2 id="lab-3-problem-set">Lab 3 Problem Set
 &lt;/h2>&lt;blockquote>
 &lt;p>题面附件代码见&lt;a class="link" href="https://github.com/charcai/BUAA-OOP-2024/tree/main/Lab03/Lab3-Code" target="_blank" rel="noopener"

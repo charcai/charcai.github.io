@@ -1,4 +1,93 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>OOP on Charactex's Blog</title><link>https://charactex.com/tags/oop/</link><description>Recent content in OOP on Charactex's Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>charactex@outlook.com (Charactex)</managingEditor><webMaster>charactex@outlook.com (Charactex)</webMaster><lastBuildDate>Sat, 04 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://charactex.com/tags/oop/index.xml" rel="self" type="application/rss+xml"/><item><title>AnonTalk 用户说明书: 面向对象程序设计(2024) 大作业</title><link>https://charactex.com/post/2025/01/anontalk-user-manual/</link><pubDate>Sat, 04 Jan 2025 00:00:00 +0000</pubDate><author>charactex@outlook.com (Charactex)</author><guid>https://charactex.com/post/2025/01/anontalk-user-manual/</guid><description>&lt;img src="https://charactex.com/post/2025/01/anontalk-user-manual/cover.jpg" alt="Featured image of post AnonTalk 用户说明书: 面向对象程序设计(2024) 大作业" />&lt;blockquote>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>OOP on Charactex's Blog</title><link>https://charactex.com/tags/oop/</link><description>Recent content in OOP on Charactex's Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>charactex@outlook.com (Charactex)</managingEditor><webMaster>charactex@outlook.com (Charactex)</webMaster><lastBuildDate>Sat, 04 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://charactex.com/tags/oop/index.xml" rel="self" type="application/rss+xml"/><item><title>AnonTalk 开发文档: 面向对象程序设计(2024) 大作业</title><link>https://charactex.com/post/2025/01/anontalk-devdoc/</link><pubDate>Sat, 04 Jan 2025 00:00:00 +0000</pubDate><author>charactex@outlook.com (Charactex)</author><guid>https://charactex.com/post/2025/01/anontalk-devdoc/</guid><description>&lt;img src="https://charactex.com/post/2025/01/anontalk-devdoc/cover.jpg" alt="Featured image of post AnonTalk 开发文档: 面向对象程序设计(2024) 大作业" />&lt;h2 id="1-项目简介">1. 项目简介
+&lt;/h2>&lt;p>本文档为北航软件工程课程面向对象程序设计(2024)大作业 &lt;code>AnonTalk&lt;/code> 的开发文档，开发团队：&lt;a class="link" href="https://github.com/ShinaiKessokuBand" target="_blank" rel="noopener"
+>ShinaiKessokuBand&lt;/a>。&lt;/p>
+&lt;h2 id="2-小组成员">2. 小组成员
+&lt;/h2>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>姓名&lt;/th>
+&lt;th>学号&lt;/th>
+&lt;th>GitHub&lt;/th>
+&lt;th>分工&lt;/th>
+&lt;th style="text-align: center">权重&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>蔡彦恒&lt;/td>
+&lt;td>&lt;code>23373381&lt;/code>&lt;/td>
+&lt;td>&lt;a class="link" href="https://github.com/charcai" target="_blank" rel="noopener"
+>charcai&lt;/a>&lt;/td>
+&lt;td>前后端开发、项目部署运行、文档撰写&lt;/td>
+&lt;td style="text-align: center">1&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>张腾月&lt;/td>
+&lt;td>&lt;code>23371309&lt;/code>&lt;/td>
+&lt;td>&lt;a class="link" href="https://github.com/duanduansweetie/" target="_blank" rel="noopener"
+>duanduansweetie&lt;/a>&lt;/td>
+&lt;td>前端开发&lt;/td>
+&lt;td style="text-align: center">1&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>王孝维&lt;/td>
+&lt;td>&lt;code>23371498&lt;/code>&lt;/td>
+&lt;td>&lt;a class="link" href="https://github.com/cmdsu" target="_blank" rel="noopener"
+>cmdsu&lt;/a>&lt;/td>
+&lt;td>后端开发、数据库设计&lt;/td>
+&lt;td style="text-align: center">1&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>郑昕豪&lt;/td>
+&lt;td>&lt;code>23373141&lt;/code>&lt;/td>
+&lt;td>&lt;a class="link" href="https://github.com/BruceLuent" target="_blank" rel="noopener"
+>BruceLuent&lt;/a>&lt;/td>
+&lt;td>后端开发&lt;/td>
+&lt;td style="text-align: center">1&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="3-协作方式">3. 协作方式
+&lt;/h2>&lt;p>需求沟通、任务分配，通过线上（微信群）与线下（新主楼教室沟通）进行联系。&lt;/p>
+&lt;p>代码托管在 GitHub 平台，每次提交代码前先拉取最新代码，避免冲突。每次提交代码时写明 &lt;code>commit&lt;/code> 信息，以便其他成员了解本次提交的内容。&lt;/p>
+&lt;p>前后端分别托管在两个不同仓库、分离式开发，前端仓库：&lt;a class="link" href="https://github.com/ShinaiKessokuBand/AnonTalk-Frontend" target="_blank" rel="noopener"
+>https://github.com/ShinaiKessokuBand/AnonTalk-Frontend&lt;/a>，后端仓库：&lt;a class="link" href="https://github.com/ShinaiKessokuBand/AnonTalk" target="_blank" rel="noopener"
+>https://github.com/ShinaiKessokuBand/AnonTalk&lt;/a>&lt;/p>
+&lt;p>前端编译生成的文件存储在 &lt;a class="link" href="https://github.com/duanduansweetie/AnonTalk_Frontend" target="_blank" rel="noopener"
+>https://github.com/duanduansweetie/AnonTalk_Frontend&lt;/a>，作为 &lt;code>submodule&lt;/code> 载入后端项目，保证开发时各组员能够正常拉取同一版本的前端代码。&lt;/p>
+&lt;p>后端 commit 记录（部分）：
+&lt;img src="https://charactex.com/post/2025/01/anontalk-devdoc/commits-backend.png"
+width="1508"
+height="863"
+srcset="https://charactex.com/post/2025/01/anontalk-devdoc/commits-backend_hu18285886062935291998.png 480w, https://charactex.com/post/2025/01/anontalk-devdoc/commits-backend_hu17995621839912240982.png 1024w"
+loading="lazy"
+alt="commits-backend"
+class="gallery-image"
+data-flex-grow="174"
+data-flex-basis="419px"
+>&lt;/p>
+&lt;p>前端 commit 记录（部分）：
+&lt;img src="https://charactex.com/post/2025/01/anontalk-devdoc/commits-frontend.png"
+width="1510"
+height="862"
+srcset="https://charactex.com/post/2025/01/anontalk-devdoc/commits-frontend_hu8418741518090427926.png 480w, https://charactex.com/post/2025/01/anontalk-devdoc/commits-frontend_hu2285518347873013263.png 1024w"
+loading="lazy"
+alt="commits-frontend"
+class="gallery-image"
+data-flex-grow="175"
+data-flex-basis="420px"
+>&lt;/p>
+&lt;h2 id="4-项目介绍">4. 项目介绍
+&lt;/h2>&lt;p>&lt;code>AnonTalk&lt;/code> 是一个匿名匹配对话平台，用户可以在平台上匿名聊天，匹配到合适的对话对象。用户可以在平台上进行注册、登陆、匹配、聊天、个人设置、交友广场等操作。&lt;/p>
+&lt;p>匿名聊天的方式增加了聊天的不确定性与用户的隐私保护，用户可以在不透露自己身份的情况下进行聊天，打破传统社交平台的约束。&lt;/p>
+&lt;h2 id="5-项目优势">5. 项目优势
+&lt;/h2>&lt;ul>
+&lt;li>全程全员采用 &lt;code>GitHub&lt;/code> 进行代码托管与版本管理，保证代码的安全性与可追溯性；&lt;/li>
+&lt;li>采用前后端分离式开发，前端与后端分别托管在不同仓库，分别开发，保证了开发效率；&lt;/li>
+&lt;li>采用 &lt;code>submodule&lt;/code> 的方式将前端代码嵌入后端项目，保证了代码的同步性；&lt;/li>
+&lt;li>采用 &lt;code>WebSocket&lt;/code> 技术实现实时聊天功能，提升了用户体验；&lt;/li>
+&lt;li>采用 &lt;code>Spring Boot&lt;/code> 框架实现后端，提升了开发效率；&lt;/li>
+&lt;/ul></description></item><item><title>AnonTalk 用户说明书: 面向对象程序设计(2024) 大作业</title><link>https://charactex.com/post/2025/01/anontalk-user-manual/</link><pubDate>Sat, 04 Jan 2025 00:00:00 +0000</pubDate><author>charactex@outlook.com (Charactex)</author><guid>https://charactex.com/post/2025/01/anontalk-user-manual/</guid><description>&lt;img src="https://charactex.com/post/2025/01/anontalk-user-manual/cover.jpg" alt="Featured image of post AnonTalk 用户说明书: 面向对象程序设计(2024) 大作业" />&lt;blockquote>
 &lt;p>本文档为北航软件工程课程面向对象程序设计(2024)大作业 AnonTalk 的用户说明书。&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="1-项目运行环境">1. 项目运行环境
